@@ -16,7 +16,7 @@
   DialogTrigger,
 } from "../components/ui/dialog"
 
-import { useState } from "react"
+import { useEffect, useMemo, useState } from "react"
 import { Slider } from "../components/ui/slider"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "../components/ui/badge"
@@ -164,98 +164,115 @@ export default function VehicleDimensions() {
     if (!reference) return 0
     return Math.round(((value - reference) / reference) * 100)
   }
-  const data = [
-    ...renault,
-    ...nissan,
-    ...byd,
-    ...skoda,
-    ...maruti,
-    ...hyundai,
-    ...honda,
-    ...tesla,
-    ...mg,
-    ...fiat,
-    ...tata,
-    ...toyota,
-    ...kia,
-    ...mahindra,
-    ...volkswagon,
-    ...bmw,
-    ...citreon,
-    ...volvo,
-    ...jeep,
-  ]
+  // var data: CarData[];
+  const [data, setdata] = useState([] as CarData[]);
+  
+  useEffect(() => {
+    // This code runs only once when the component mounts
+    setdata([
+     ...renault,
+     ...nissan,
+     ...byd,
+     ...skoda,
+     ...maruti,
+     ...hyundai,
+     ...honda,
+     ...tesla,
+     ...mg,
+     ...fiat,
+     ...tata,
+     ...toyota,
+     ...kia,
+     ...mahindra,
+     ...volkswagon,
+     ...bmw,
+     ...citreon,
+     ...volvo,
+     ...jeep,
+   ])
+  }, []); // The empty dependency array ensures it runs only on mount
 
-  finddataspecs(data)
-
+  // finddataspecs(data)
+  const stats = useMemo(() => finddataspecs(data), [data]);
+  stats
   const manufacturers = Array.from(new Set(data.map((car) => car.manufacturer))).sort()
   const totalCarModels = data.length
   // console.log(data)
   // Filter and sort data
-  const filteredData = data
-    // .map(item=>{console.log(item); return item})
-    .filter((item) => {
-      if (starredCars && starredCars?.includes(item.name)) return true
-      // Always include pinned car
-      if (pinnedCar && item.name === pinnedCar.name) return true
+  // Memoize the computation so it only recalculates when dependencies change.
+  const filteredData = useMemo(() => {
+    return data
+      // First filtering by dimensions, search, and starred/pinned logic.
+      .filter((item) => {
+        if (starredCars && starredCars.includes(item.name)) return true;
+        // Always include pinned car
+        if (pinnedCar && item.name === pinnedCar.name) return true;
 
-      // Filter by search query
-      if (searchQuery && !item.name.toLowerCase().includes(searchQuery.toLowerCase())) return false
-
-      // Filter by dimension sliders
-      return (
-        item.height < dimensions.height[1] &&
-        item.height > dimensions.height[0] &&
-        item.width < dimensions.width[1] &&
-        item.width > dimensions.width[0] &&
-        item.length < dimensions.length[1] &&
-        item.length > dimensions.length[0] &&
-        item.wheelbase < dimensions.wheelbase[1] &&
-        item.wheelbase > dimensions.wheelbase[0] &&
-        item.turnRadius < dimensions.turnRadius[1] &&
-        item.turnRadius > dimensions.turnRadius[0] &&
-        item.groundClearance < dimensions.groundClearence[1] &&
-        item.groundClearance > dimensions.groundClearence[0]
-      )
-    })
-    // .map(item=>{console.log(item); return item})
-    .filter((item) => {
-      if (starredCars && starredCars?.includes(item.name)) return true
-      if (pinnedCar && item.name === pinnedCar.name) return true
-      if (manufacturerFilter !== "All" && item.manufacturer !== manufacturerFilter) return false
-      // if (pinnedCar && comparisonFilter !== "none" && comparisonfield !== "None") {
-      //         // for (const field of comparisonfield) {
-      //     if (comparisonFilter === ">" && item[comparisonfield] <= pinnedCar[comparisonfield]) return false
-      //     if (comparisonFilter === "<" && item[comparisonfield] >= pinnedCar[comparisonfield]) return false
-      //   // }
-      // }
-      // Handle multiple comparisons
-      return comparisons.every((comparison) => {
-        if (pinnedCar) {
-          const carValue = item[comparison.field]
-          const pinnedCarValue = pinnedCar[comparison.field]
-
-          if (comparison.operator === ">") {
-            return carValue > pinnedCarValue
-          } else if (comparison.operator === "<") {
-            return carValue < pinnedCarValue
-          }
+        // Filter by search query
+        if (searchQuery && !item.name.toLowerCase().includes(searchQuery.toLowerCase())) {
+          return false;
         }
-        return true
+
+        // Filter by dimension sliders
+        return (
+          item.height < dimensions.height[1] &&
+          item.height > dimensions.height[0] &&
+          item.width < dimensions.width[1] &&
+          item.width > dimensions.width[0] &&
+          item.length < dimensions.length[1] &&
+          item.length > dimensions.length[0] &&
+          item.wheelbase < dimensions.wheelbase[1] &&
+          item.wheelbase > dimensions.wheelbase[0] &&
+          item.turnRadius < dimensions.turnRadius[1] &&
+          item.turnRadius > dimensions.turnRadius[0] &&
+          item.groundClearance < dimensions.groundClearence[1] &&
+          item.groundClearance > dimensions.groundClearence[0]
+        );
       })
-      // return true
-    })
-    .sort((a, b) => {
-      if (sortOrder === "asc") {
-        return sortBy === "name" || sortBy === "manufacturer"
-          ? a.name.localeCompare(b.name)
-          : (a[sortBy] as number) - (b[sortBy] as number)
-      } else {
-        return sortBy === "name" || sortBy === "manufacturer"
-          ? b.name.localeCompare(a.name)
-          : (b[sortBy] as number) - (a[sortBy] as number)
-      }
-    })
+      // Filter further by manufacturer and additional comparisons
+      .filter((item) => {
+        if (starredCars && starredCars.includes(item.name)) return true;
+        if (pinnedCar && item.name === pinnedCar.name) return true;
+        if (manufacturerFilter !== 'All' && item.manufacturer !== manufacturerFilter) return false;
+
+        // Handle multiple comparisons when a pinned car exists.
+        return comparisons.every((comparison) => {
+          if (pinnedCar) {
+            const carValue = item[comparison.field];
+            const pinnedCarValue = pinnedCar[comparison.field];
+
+            if (comparison.operator === '>') {
+              return carValue > pinnedCarValue;
+            } else if (comparison.operator === '<') {
+              return carValue < pinnedCarValue;
+            }
+          }
+          return true;
+        });
+      })
+      // Sort the filtered results.
+      .sort((a, b) => {
+        if (sortOrder === 'asc') {
+          return sortBy === 'name' || sortBy === 'manufacturer'
+            ? a.name.localeCompare(b.name)
+            : a[sortBy] - b[sortBy];
+        } else {
+          return sortBy === 'name' || sortBy === 'manufacturer'
+            ? b.name.localeCompare(a.name)
+            : b[sortBy] - a[sortBy];
+        }
+      });
+  }, [
+    data,
+    starredCars,
+    pinnedCar,
+    searchQuery,
+    dimensions,
+    manufacturerFilter,
+    comparisons,
+    sortOrder,
+    sortBy
+  ]);
 
   // const toggleSort = (field: typeof sortBy) => {
   //   if (sortBy === field) {
@@ -266,7 +283,7 @@ export default function VehicleDimensions() {
   //   }
   // }
 
-  const initialDimensions = {
+  const initialDimensions = useMemo(() => {return {
     height: [Math.min(...data.map((car) => car.height)), Math.max(...data.map((car) => car.height))],
     width: [Math.min(...data.map((car) => car.width)), Math.max(...data.map((car) => car.width))],
     length: [Math.min(...data.map((car) => car.length)), Math.max(...data.map((car) => car.length))],
@@ -276,7 +293,7 @@ export default function VehicleDimensions() {
       Math.min(...data.map((car) => car.groundClearance)),
       Math.max(...data.map((car) => car.groundClearance)),
     ],
-  }
+  }}, [data])
 
   // setDimensions(initialDimensions)
   const [showDimensionsRange, setShowDimensionsRange] = useState(true)
@@ -303,7 +320,7 @@ export default function VehicleDimensions() {
             {filteredData.length} of {totalCarModels} vehicles found
           </p>
         </div>
-
+      </div>
         {/* Search, Sort, and Filter Controls */}
         <div className="flex flex-col md:flex-row gap-4">
           <div className="flex-1">
@@ -429,8 +446,6 @@ export default function VehicleDimensions() {
         <button className="px-3 py-1 border rounded-md" onClick={() => {setShowDimensionsRange(!showDimensionsRange)}}>
           {showDimensionsRange ? "Hide" : "Show"} Dimensions Range
         </button>
-      </div>
-
       {/* Dimensions Range Card */}
       {showDimensionsRange && (
         <Card className="w-full">
@@ -614,47 +629,6 @@ export default function VehicleDimensions() {
             <CardContent className="space-y-2">
               <p>
                 Price: ${item.price?.toLocaleString() || "9999"}
-                {/* {item.capacity.includes("kWh") && (
-                  <Dialog>
-                    <DialogTrigger asChild>
-                      <button className="ml-1 inline-flex">
-                        <Info className="h-4 w-4 text-muted-foreground" />
-                        <span className="sr-only">EV running costs</span>
-                      </button>
-                    </DialogTrigger>
-                    <DialogContent className="sm:max-w-md">
-                      <DialogHeader>
-                        <DialogTitle>EV Running Cost Calculator</DialogTitle>
-                        <DialogDescription>
-                          The true cost of running an electric vehicle includes electricity costs and battery depreciation
-                        </DialogDescription>
-                      </DialogHeader>
-                      <div className="space-y-4">
-                        <div className="space-y-2">
-                          <h4 className="font-medium">Total Running Cost Formula</h4>
-                          <p className="text-sm">
-                            Total Cost per km = (Electricity Cost per kWh / Range per kWh) + (Battery Replacement Cost / Battery Lifecycle in km)
-                          </p>
-                        </div>
-                        <div className="space-y-2">
-                          <h4 className="font-medium">Example Calculation</h4>
-                          <div className="text-sm space-y-1">
-                            <p>• Electricity Cost: $0.15 per kWh</p>
-                            <p>• Vehicle Efficiency: 6 km per kWh</p>
-                            <p>• Battery Cost: $10,000</p>
-                            <p>• Battery Lifecycle: 200,000 km</p>
-                            <p>• Electricity Cost per km: $0.025</p>
-                            <p>• Battery Depreciation per km: $0.05</p>
-                            <p className="font-medium">• Total Cost per km: $0.075</p>
-                          </div>
-                        </div>
-                        <p className="text-xs text-muted-foreground">
-                          Note: Actual costs vary based on local electricity rates, driving conditions, and battery technology.
-                        </p>
-                      </div>
-                    </DialogContent>
-                  </Dialog>
-                )} */}
                 {pinnedCar && pinnedCar.name !== item.name && (
                   <Badge
                     className={`ml-2 ${calculatePercentage(item.price, pinnedCar.price) > 0 ? "bg-red-100 text-red-800" : "bg-green-100 text-green-800"}`}
@@ -666,7 +640,7 @@ export default function VehicleDimensions() {
               </p>
               <p className="flex items-center gap-1">
                 Length: {item.length} mm
-                <Dialog>
+                {/* <Dialog>
                   <DialogTrigger asChild>
                     <button className="inline-flex">
                       <Info className="h-4 w-4 text-muted-foreground" />
@@ -722,7 +696,7 @@ export default function VehicleDimensions() {
                       </div>
                     </div>
                   </DialogContent>
-                </Dialog>
+                </Dialog> */}
                 {pinnedCar && pinnedCar.name !== item.name && (
                   <Badge
                     className={`ml-2 ${calculatePercentage(item.length, pinnedCar.length) > 0 ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"}`}
@@ -801,7 +775,7 @@ export default function VehicleDimensions() {
               <p>Capacity: {item.capacity}</p>
               <p className="flex items-center gap-1">
                 Estimated Cabin Space: {(item.estimatedCabinSpace/1000000000).toPrecision(2)} m^3
-                <Popover>
+                {/* <Popover>
                   <PopoverTrigger asChild>
                     <button className="inline-flex">
                       <Info className="h-4 w-4 text-muted-foreground" />
@@ -818,7 +792,7 @@ export default function VehicleDimensions() {
                       </p>
                     </div>
                   </PopoverContent>
-                </Popover>
+                </Popover> */}
                 {pinnedCar && pinnedCar.name !== item.name && (
                   <Badge
                     className={`ml-2 ${calculatePercentage(item.estimatedCabinSpace, pinnedCar.estimatedCabinSpace) > 0 ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"}`}
@@ -830,7 +804,7 @@ export default function VehicleDimensions() {
               </p>
               <p className="flex items-center gap-1">
                 Drag Coefficient: {item.dragCoefficient}
-                <Popover>
+                {/* <Popover>
                   <PopoverTrigger asChild>
                     <button className="inline-flex">
                       <Info className="h-4 w-4 text-muted-foreground" />
@@ -847,7 +821,7 @@ export default function VehicleDimensions() {
                       </p>
                     </div>
                   </PopoverContent>
-                </Popover>
+                </Popover> */}
                 {pinnedCar && pinnedCar.name !== item.name && (
                   <Badge
                     className={`ml-2 ${calculatePercentage(item.dragCoefficient, pinnedCar.dragCoefficient) > 0 ? "bg-red-100 text-red-800" : "bg-green-100 text-green-800"}`}
@@ -859,7 +833,7 @@ export default function VehicleDimensions() {
               </p>
               <p className="flex items-center gap-1">
                 Size to Weight Ratio: {((1/item.sizeToWeightRatio)*1000000).toPrecision(2)}
-                <Popover>
+                {/* <Popover>
                   <PopoverTrigger asChild>
                     <button className="inline-flex">
                       <Info className="h-4 w-4 text-muted-foreground" />
@@ -876,7 +850,7 @@ export default function VehicleDimensions() {
                       </p>
                     </div>
                   </PopoverContent>
-                </Popover>
+                </Popover> */}
                 {pinnedCar && pinnedCar.name !== item.name && (
                   <Badge
                     className={`ml-2 ${calculatePercentage(1/item.sizeToWeightRatio, 1/pinnedCar.sizeToWeightRatio) > 0 ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"}`}
