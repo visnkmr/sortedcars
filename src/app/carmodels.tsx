@@ -2112,6 +2112,27 @@ fuelType: 3,
     sizeToWeightRatio: 5554109.93, // 12219041835 / 2200
     dragCoefficient: 0.31 // Estimate for aerodynamic coupe SUV[](mahindra-cars/xev-9e/)
   },
+  {
+    name: "Mahindra XEV 9s",
+    yearsProduced: "2025 - Present",
+    power: [228, 282],
+    torque: 380,
+    gears: "Single-speed automatic",
+    length: 4737,
+    width: 1900,
+    height: 1747,
+    groundClearance: 201,
+    wheelbase: 2762,
+    turnRadius: 5.0,
+    price: 23333,
+    capacity: [59000, 79000],
+    manufacturer: "Mahindra",
+    fuelType: 3,
+    weight: 2150,
+    estimatedCabinSpace: 8113098800,
+    sizeToWeightRatio: 3773534.33,
+    dragCoefficient: 0.31
+  },
     {
         name: "Mahindra Alturas G4",
         yearsProduced: "2018 - 2022 (India)", // Corrected: Discontinued
