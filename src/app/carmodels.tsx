@@ -12,6 +12,8 @@ export const vinfast = [
     wheelbase: 2075, // mm[](/new-cars/vinfast/vf-3/specifications)
     turnRadius: 4.8, // m (estimated, compact size, similar to Kwid)
     price: 7860, // Approx ₹7.86 Lakh INR -> USD (based on India pricing)[](vinfast/vf3)
+    priceInr: 786000,
+
     capacity: 18600,
     manufacturer: "VinFast",
 fuelType: 3,
@@ -33,6 +35,8 @@ fuelType: 3,
     wheelbase: 2730, // mm (estimated for C1-segment SUV)
     turnRadius: 5.2, // m (estimated, typical for compact SUV)
     price: 16490, // Approx ₹16.49 Lakh INR -> USD[](vinfast-cars/)
+    priceInr: 1649000,
+
     capacity: 59600,
     manufacturer: "VinFast",
 fuelType: 3,
@@ -54,6 +58,8 @@ fuelType: 3,
     wheelbase: 2840, // mm (estimated for C2-segment SUV)
     turnRadius: 5.4, // m (estimated, typical for mid-size SUV)
     price: 20890, // Approx ₹20.89 Lakh INR -> USD[](vinfast-cars/)
+    priceInr: 2089000,
+
     capacity: [59600, 70800],
     manufacturer: "VinFast",
 fuelType: 3,
@@ -75,6 +81,8 @@ fuelType: 3,
     wheelbase: 2950, // mm (estimated for mid-size SUV)
     turnRadius: 5.6, // m (estimated, typical for D-segment SUV)
     price: 41100, // USD (Eco model MSRP)[](vf-8)
+    priceInr: 4110000,
+
     capacity: [82000, 87700],
     manufacturer: "VinFast",
 fuelType: 3,
@@ -96,6 +104,8 @@ fuelType: 3,
     wheelbase: 3150, // mm (estimated for E-segment SUV)
     turnRadius: 6.0, // m (estimated, typical for large SUV)
     price: 69000, // USD (estimated MSRP for full-size EV)[](VinFast_VF_9)
+    priceInr: 6900000,
+
     capacity: 92000,
     manufacturer: "VinFast",
 fuelType: 3,
@@ -244,6 +254,8 @@ export const byd = [
       wheelbase: 2720,
       turnRadius: 5.5,
       price: 32000, // Assumed USD
+      priceInr: 2499000,
+
       capacity: 60480,
       manufacturer: "BYD",
 fuelType: 3,
@@ -265,6 +277,8 @@ fuelType: 3,
       wheelbase: 2920, // Corrected Wheelbase (was 2765)
       turnRadius: 5.7,
       price: 45000, // Assumed USD
+      priceInr: 4100000,
+
       capacity: 82560,
       manufacturer: "BYD",
 fuelType: 3,
@@ -770,6 +784,8 @@ fuelType: 1,
       wheelbase: 2600,
       turnRadius: 5.4,
       price: 23340, // ~20 Lakh INR -> USD
+      priceInr: 2000000,
+
       capacity: 48000,
       manufacturer: "Maruti Suzuki",
 fuelType: 3,
@@ -1116,6 +1132,8 @@ export const tesla = [ // Note: Tesla not officially sold in India yet. Specs ar
       wheelbase: 2960,
       turnRadius: 6.2, // Corrected (was 5.8) - Approx based on 12.4m diameter
       price: 74990, // Base USD MSRP (subject to change)
+      priceInr: 6374150,
+
       capacity: 95000,
       manufacturer: "Tesla",
 fuelType: 3,
@@ -1136,6 +1154,8 @@ fuelType: 3,
       wheelbase: 2875,
       turnRadius: 5.8, // Corrected (was 5.4) - Approx based on 11.6m diameter
       price: 38990, // Base USD MSRP (subject to change)
+      priceInr: 3314150,
+
       capacity: 57500,
       manufacturer: "Tesla",
 fuelType: 3,
@@ -1156,6 +1176,8 @@ fuelType: 3,
       wheelbase: 2965,
       turnRadius: 6.1, // Approx based on 12.2m diameter
       price: 79990, // Base USD MSRP (subject to change)
+      priceInr: 6799150,
+
       capacity: 95000,
       manufacturer: "Tesla",
 fuelType: 3,
@@ -1176,6 +1198,8 @@ fuelType: 3,
       wheelbase: 2890, // Corrected Wheelbase (was 2700)
       turnRadius: 6.05, // Corrected (was 5.7) - Approx based on 12.1m diameter
       price: 43990, // Base USD MSRP (subject to change)
+      priceInr: 3739150,
+
       capacity: 57500,
       manufacturer: "Tesla",
 fuelType: 3,
@@ -1197,6 +1221,8 @@ fuelType: 3,
       wheelbase: 2352, // Corrected Wheelbase (was 2450)
       turnRadius: 5.5, // Corrected (was 5.2) - Approx based on 11m diameter
       price: 109000, // Original Base USD MSRP (was 200k)
+      priceInr: 9265000,
+
       capacity: 53000,
       manufacturer: "Tesla",
 fuelType: 3,
@@ -1217,6 +1243,8 @@ fuelType: 3,
       wheelbase: 3807, // Corrected Wheelbase (was 3650)
       turnRadius: 6.7, // Corrected (was 7.0) - Approx based on 13.4m diameter (with rear steer)
       price: 60990, // Base RWD USD MSRP (subject to change)
+      priceInr: 5184150,
+
       capacity: 123000,
       manufacturer: "Tesla",
 fuelType: 3,
@@ -1260,6 +1288,8 @@ fuelType: 1,
         wheelbase: 2010, // Corrected Wheelbase (was 2000)
         turnRadius: 4.2, // Corrected Turn Radius (was 4.5)
         price: 8052, // Corrected: Starting ~6.9 Lakh INR -> USD (was 8k USD)
+        priceInr: 690000,
+
         capacity: 17300,
         manufacturer: "MG Motor",
 fuelType: 3,
@@ -1301,6 +1331,8 @@ fuelType: 1,
       wheelbase: 2585, // Corrected Wheelbase (was 2610)
       turnRadius: 5.6, // Corrected Turn Radius (was 5.3)
       price: 22173, // Corrected: Starting ~19 Lakh INR -> USD (was 22k USD)
+      priceInr: 1900000,
+
       capacity: 50300,
       manufacturer: "MG Motor", // Corrected Manufacturer
 fuelType: 3,
@@ -1331,27 +1363,30 @@ fuelType: 0,
     },
     // Removed duplicate MG Comet entry
     {
-      name: "MG Windsor EV / Yep Plus based", // Corrected: Hypothetical Name
-      yearsProduced: "2024-2025 (Expected)", // Corrected: Hypothetical
-      power: 100,
-      gears: "Single-speed automatic", // Corrected Gears (was 1)
-      length: 4000, // Corrected Length (Approx based on Yep Plus, was 4295)
-      width: 1760, // Corrected Width (Approx based on Yep Plus, was 1850)
-      height: 1715, // Corrected Height (Approx based on Yep Plus, was 1677)
-      groundClearance: 186, // Kept provided GC as estimate
-      wheelbase: 2560, // Corrected Wheelbase (Approx based on Yep Plus, was 2700)
-      turnRadius: 5.5, // Kept provided estimate
-      price: 18672, // Kept converted price (16 Lakh INR) as estimate
-      capacity: 41000,
-      manufacturer: "MG Motor", // Corrected Manufacturer
-fuelType: 3,
-      weight: 1495, // Kept provided weight as estimate
-      estimatedCabinSpace: 6960518400, // Recalculated: ((1715 - 186) * 2560 * 1760)
-      sizeToWeightRatio: 4655865.15, // Recalculated: (6960518400 / 1495)
-      dragCoefficient: 0.32, // Kept provided estimate
+      name: "MG Windsor EV",
+      yearsProduced: "2024 - Present",
+      power: 134,
+      torque: 200,
+      gears: "Single-speed automatic",
+      length: 4295,
+      width: 1850,
+      height: 1677,
+      groundClearance: 186,
+      wheelbase: 2700,
+      turnRadius: 5.5,
+      price: 16338, // ~14 Lakh INR -> USD
+      priceInr: 1400000,
+
+      capacity: [38000, 52900],
+      manufacturer: "MG Motor",
+ fuelType: 3,
+      weight: 1600, // Kerb weight approx (38kWh: 1566kg, 52.9kWh: 1653kg)
+      estimatedCabinSpace: 7447545000, // (1677 - 186) * 2700 * 1850
+      sizeToWeightRatio: 4654715.63, // 7447545000 / 1600
+      dragCoefficient: 0.32,
     },
   ]
-export const fiat = [ // Note: Fiat has ceased new car sales in India. Data reflects last sold models.
+export const fiat = [
     {
       name: "Fiat Punto Evo / Abarth", // Corrected Name
       yearsProduced: "2009 - 2018 (India)", // Corrected Years
@@ -1457,7 +1492,7 @@ fuelType: 1,
     {
       name: "Tata Nexon EV",
       yearsProduced: "2020 - Present",
-      power: 127,
+      power: [127, 142],
       torque: 215,
       gears: "Single-speed automatic",
       length: 3995,
@@ -1467,7 +1502,9 @@ fuelType: 1,
       wheelbase: 2498,
       turnRadius: 5.1,
       price: 16338, // ~14 Lakh INR -> USD
-      capacity: [30240, 40200],
+      priceInr: 1400000,
+
+      capacity: [30240, 46080],
       manufacturer: "Tata Motors",
 fuelType: 3,
       weight: 1400, // Kerb weight approx
@@ -1478,8 +1515,8 @@ fuelType: 3,
     {
       name: "Tata Tiago EV",
       yearsProduced: "2022 - Present",
-      power: 60,
-      torque: 110,
+      power: [60, 74],
+      torque: [110, 114],
       gears: "Single-speed automatic",
       length: 3802,
       width: 1677,
@@ -1488,9 +1525,10 @@ fuelType: 3,
       wheelbase: 2400,
       turnRadius: 4.9,
       price: 9919, // ~8.5 Lakh INR -> USD
+      priceInr: 850000,
       capacity: [19200, 24000],
       manufacturer: "Tata Motors",
-fuelType: 3,
+ fuelType: 3,
       weight: 1015, // Kerb weight approx
       estimatedCabinSpace: 5514350400, // (1535 - 168) * 2400 * 1677
       sizeToWeightRatio: 5432857.54, // 5514350400 / 1015
@@ -1509,6 +1547,8 @@ fuelType: 3,
       wheelbase: 2450,
       turnRadius: 5.1,
       price: 14004, // ~12 Lakh INR -> USD
+      priceInr: 1200000,
+
       capacity: 26000,
       manufacturer: "Tata Motors",
 fuelType: 3,
@@ -1520,43 +1560,46 @@ fuelType: 3,
     {
       name: "Tata Punch EV",
       yearsProduced: "2024 - Present",
-      power: 80,
-      torque: 114,
+      power: [88, 129],
+      torque: 154,
       gears: "Single-speed automatic",
-      length: 3827,
+      length: 3876,
       width: 1742,
       height: 1615,
-      groundClearance: 190,
+      groundClearance: 175,
       wheelbase: 2445,
       turnRadius: 4.9,
-      price: 12837, // ~11 Lakh INR -> USD
-      capacity: [25000, 35000],
+      price: 11333, // 2026 facelift starting ~9.69 Lakh INR -> USD
+      priceInr: 969000,
+      capacity: [30000, 40000],
       manufacturer: "Tata Motors",
-fuelType: 3,
-      weight: 1200, // Kerb weight approx
-      estimatedCabinSpace: 6060197490, // (1615 - 190) * 2445 * 1742
-      sizeToWeightRatio: 5050164.58, // 6060197490 / 1200
+ fuelType: 3,
+      weight: 1260, // Kerb weight approx
+      estimatedCabinSpace: 6196439160, // (1615 - 175) * 2445 * 1742
+      sizeToWeightRatio: 4917808.86, // 6196439160 / 1260
       dragCoefficient: 0.34,
     },
     {
       name: "Tata Curvv EV",
       yearsProduced: "2024 - Present",
-      power: [148, 168],
-      torque: [215, 260],
+      power: [148, 165],
+      torque: 215,
       gears: "Single-speed automatic",
-      length: 4308,
+      length: 4310,
       width: 1810,
-      height: 1630,
-      groundClearance: 190,
-      wheelbase: 2600,
-      turnRadius: 5.4,
+      height: 1637,
+      groundClearance: 186,
+      wheelbase: 2560,
+      turnRadius: 5.3,
       price: 21006, // ~18 Lakh INR -> USD
-      capacity: [40000, 55000],
+      priceInr: 1800000,
+
+      capacity: [45000, 55000],
       manufacturer: "Tata Motors",
 fuelType: 3,
-      weight: 1600, // Kerb weight approx
-      estimatedCabinSpace: 6823440000, // (1630 - 190) * 2600 * 1810
-      sizeToWeightRatio: 4264650.00, // 6823440000 / 1600
+      weight: 1583, // Kerb weight approx (55kWh variant)
+      estimatedCabinSpace: 6723353600, // (1637 - 186) * 2560 * 1810
+      sizeToWeightRatio: 4247221.73, // 6723353600 / 1583
       dragCoefficient: 0.30,
     },
     {
@@ -1663,8 +1706,8 @@ fuelType: 1,
       name: "Tata Tiago",
       yearsProduced: "2016 - Present",
       power: [72, 84.8],
-      torque: [113, 114],
-      gears: "5-speed manual / AMT / Single-speed (EV)", // Corrected Gears
+      torque: [96.5, 113],
+      gears: "5-speed manual / AMT", // 2026 facelift
       length: 3802, // Corrected Length
       width: 1677, // Corrected Width
       height: 1535, // Corrected Height
@@ -1742,22 +1785,22 @@ fuelType: 1,
     {
       name: "Tata Punch",
       yearsProduced: "2021 - Present",
-      power: [72, 86.7],
-      torque: [103, 115],
-      gears: "5-speed manual / AMT", // Corrected Gears
-      length: 3827,
+      power: [72, 118.4],
+      torque: [103, 170],
+      gears: "5-speed manual / AMT / 6-speed manual", // 2026 facelift adds turbo 6MT
+      length: 3876, // 2026 facelift updated length
       width: 1742,
       height: 1615,
-      groundClearance: 187,
+      groundClearance: 193, // 2026 facelift updated GC
       wheelbase: 2445,
-      turnRadius: 4.9, // Corrected Turn Radius (was 5.0)
-      price: 7002, // Corrected: Starting ~6 Lakh INR -> USD (was 6.5k USD)
-      manufacturer: "Tata Motors", // Corrected Manufacturer
-fuelType: 1,
+      turnRadius: 4.9,
+      price: 6538, // 2026 facelift starting ~5.59 Lakh INR -> USD
+      manufacturer: "Tata Motors",
+ fuelType: 1,
       weight: 1000, // Approx Kerb Weight (kg, Petrol MT)
-      estimatedCabinSpace: 6060197490, // Recalculated: ((1615 - 187) * 2445 * 1742)
-      sizeToWeightRatio: 6060197.49, // Recalculated: (6060197490 / 1000)
-      dragCoefficient: 0.34, // Estimate
+      estimatedCabinSpace: 6196439160, // Recalculated: ((1615 - 193) * 2445 * 1742)
+      sizeToWeightRatio: 6196439.16, // Recalculated: (6196439160 / 1000)
+      dragCoefficient: 0.34,
     },
   ]
 export const toyota = [
@@ -1979,6 +2022,8 @@ fuelType: 0,
         wheelbase: 2900, // Corrected Wheelbase
         turnRadius: 5.8, // Corrected Turn Radius
         price: 70020, // Corrected: Starting ~60 Lakh INR -> USD
+        priceInr: 6000000,
+
         capacity: 77400,
         manufacturer: "Kia",
 fuelType: 3,
@@ -2062,6 +2107,8 @@ export const mahindra = [
     wheelbase: 2445, // mm[](mahindra/xuv400-ev/specs)
     turnRadius: 5.3, // m (estimated, typical for compact SUV)
     price: 18490, // Approx ₹15.49 Lakh INR -> USD (lowest ex-showroom)[](mahindra/xuv400-ev/specs)
+    priceInr: 1549000,
+
     capacity: [34500, 39400],
     manufacturer: "Mahindra",
 fuelType: 3,
@@ -2083,6 +2130,8 @@ fuelType: 3,
     wheelbase: 2775, // mm (estimated, typical for segment)[](mahindras-2-new-electric-suvs/)
     turnRadius: 5.4, // m (estimated, typical for compact SUV)
     price: 22550, // Approx ₹18.90 Lakh INR -> USD (lowest ex-showroom)[](ev-brand/mahindra)
+    priceInr: 1890000,
+
     capacity: [59000, 79000],
     manufacturer: "Mahindra",
 fuelType: 3,
@@ -2104,6 +2153,8 @@ fuelType: 3,
     wheelbase: 2775, // mm[](mahindra-cars/xev-9e/specifications)
     turnRadius: 5.6, // m[](mahindra-cars/xev-9e/specifications)
     price: 26110, // Approx ₹21.90 Lakh INR -> USD (lowest ex-showroom)[](ev-brand/mahindra)[](mahindra-cars/xev-9e/)
+    priceInr: 2190000,
+
     capacity: [59000, 79000],
     manufacturer: "Mahindra",
 fuelType: 3,
@@ -2125,6 +2176,8 @@ fuelType: 3,
     wheelbase: 2762,
     turnRadius: 5.0,
     price: 23333,
+    priceInr: 1995000,
+
     capacity: [59000, 79000],
     manufacturer: "Mahindra",
     fuelType: 3,
@@ -2166,6 +2219,8 @@ fuelType: 0,
         wheelbase: 2630,
         turnRadius: 5.25, // Corrected Turn Radius (based on Verito)
         price: 11670, // Kept estimated price (10 Lakh INR)
+        priceInr: 1000000,
+
         capacity: 21200,
         manufacturer: "Mahindra Electric",
 fuelType: 3,
@@ -2411,6 +2466,8 @@ fuelType: 1,
       wheelbase: 2771, // Global spec
       turnRadius: 5.1, // Corrected (RWD, based on 10.2m diameter)
       price: 64185, // Estimated: ~55 Lakh INR -> USD
+      priceInr: 5500000,
+
       capacity: 77000,
       manufacturer: "Volkswagen",
 fuelType: 3,
@@ -2556,6 +2613,8 @@ fuelType: 1,
     wheelbase: 3000,
     turnRadius: 6.4, // (Base, can be lower with Integral Active Steering)
     price: 162807, // Starting xDrive50 USD
+    priceInr: 12100000,
+
     capacity: 106300,
     manufacturer: "BMW",
 fuelType: 3,
@@ -2578,6 +2637,8 @@ fuelType: 3,
     wheelbase: 2856,
     turnRadius: 5.95, // Corrected (based on 11.9m diameter)
     price: 87525, // Corrected: Starting ~75 Lakh INR -> USD
+    priceInr: 7500000,
+
     capacity: 80700,
     manufacturer: "BMW",
 fuelType: 3,
@@ -2664,6 +2725,8 @@ export const volvo=[
     wheelbase: 2702,
     turnRadius: 5.7, // Corrected Turn Radius (was 5.8)
     price: 65340, // Corrected: Starting ~56 Lakh INR -> USD (was 34k USD)
+    priceInr: 5600000,
+
     capacity: [67000, 75000],
     manufacturer: "Volvo",
 fuelType: 3,
@@ -2728,6 +2791,8 @@ fuelType: 1,
     wheelbase: 2702,
     turnRadius: 5.7, // Seems correct
     price: 73515, // Corrected: Starting ~62.9 Lakh INR -> USD
+    priceInr: 6290000,
+
     capacity: [67000, 75000],
     manufacturer: "Volvo",
 fuelType: 3,
