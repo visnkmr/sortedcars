@@ -57,8 +57,8 @@ import { InfoPopover } from "./info-components"
 export type CarData = {
   name: string
   yearsProduced: string
-  power: string
-  torque: string
+  power: number | number[]
+  torque?: number | number[]
   gears: string
   length: number
   width: number
@@ -67,7 +67,7 @@ export type CarData = {
   wheelbase: number
   turnRadius: number
   price: number
-  capacity: string
+  capacity?: number | number[]
   manufacturer: string
   weight: number
   estimatedCabinSpace: number
@@ -75,12 +75,30 @@ export type CarData = {
   dragCoefficient: number
 }
 
+function getComparableValue(value: number | number[] | undefined): number {
+  if (value === undefined) return 0
+  return Array.isArray(value) ? Math.max(...value) : value
+}
+
+function formatValue(value: number | number[] | undefined): string {
+  if (value === undefined) return "N/A"
+  return Array.isArray(value) ? value.join(" - ") : String(value)
+}
+
+function formatCapacity(value: number | number[] | undefined): string {
+  if (value === undefined) return "N/A"
+  if (Array.isArray(value)) {
+    return value.map(v => `${(v / 1000).toFixed(v % 1000 === 0 ? 0 : 1)} kWh`).join(" - ")
+  }
+  return `${(value / 1000).toFixed(value % 1000 === 0 ? 0 : 1)} kWh`
+}
+
 // 17. Move the finddataspecs function outside the component
 function finddataspecs(data: CarData[]) {
   // Only run this in development mode
   if (process.env.NODE_ENV !== "production") {
     // List of properties for which you want min and max values
-    const properties: (keyof CarData)[] = ["length", "width", "height", "turnRadius", "groundClearance", "wheelbase"]
+    const properties: (keyof CarData)[] = ["length", "width", "height", "turnRadius", "groundClearance", "wheelbase", "power", "torque", "capacity"]
     // Initialize an object to store the results
     type MinMax = { min: number; max: number }
 
@@ -103,7 +121,8 @@ function finddataspecs(data: CarData[]) {
     // Iterate over the data to compute min and max for each property
     data.forEach((item) => {
       properties.forEach((prop) => {
-        const value = item[prop] as number
+        const raw = item[prop]
+        const value = typeof raw === 'number' ? raw : (typeof raw === 'string' ? 0 : getComparableValue(raw))
         if (value < stats[prop].min) {
           stats[prop].min = value
         }
@@ -145,10 +164,6 @@ const CarCard = memo(({ item, pinnedCar, setPinnedCar, starredCars, starcar }:ca
           <CardDescription>
             {item.yearsProduced}
             <br />
-            Power: {item.power}
-            <br />
-            Torque: {item.torque}
-            <br />
             Gears: {item.gears}
           </CardDescription>
         </div>
@@ -182,6 +197,28 @@ const CarCard = memo(({ item, pinnedCar, setPinnedCar, starredCars, starcar }:ca
             >
               {calculatePercentage(item.price, pinnedCar.price) > 0 ? "+" : ""}
               {calculatePercentage(item.price, pinnedCar.price)}%
+            </Badge>
+          )}
+        </p>
+        <p className="flex items-center gap-1">
+          Power: {formatValue(item.power)} bhp
+          {pinnedCar && pinnedCar.name !== item.name && (
+            <Badge
+              className={`ml-2 ${getComparableValue(item.power) > getComparableValue(pinnedCar.power) ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"}`}
+            >
+              {calculatePercentage(getComparableValue(item.power), getComparableValue(pinnedCar.power)) > 0 ? "+" : ""}
+              {calculatePercentage(getComparableValue(item.power), getComparableValue(pinnedCar.power))}%
+            </Badge>
+          )}
+        </p>
+        <p className="flex items-center gap-1">
+          Torque: {formatValue(item.torque)} Nm
+          {pinnedCar && pinnedCar.name !== item.name && (
+            <Badge
+              className={`ml-2 ${getComparableValue(item.torque) > getComparableValue(pinnedCar.torque) ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"}`}
+            >
+              {calculatePercentage(getComparableValue(item.torque), getComparableValue(pinnedCar.torque)) > 0 ? "+" : ""}
+              {calculatePercentage(getComparableValue(item.torque), getComparableValue(pinnedCar.torque))}%
             </Badge>
           )}
         </p>
@@ -263,7 +300,17 @@ const CarCard = memo(({ item, pinnedCar, setPinnedCar, starredCars, starcar }:ca
             </Badge>
           )}
         </p>
-        <p>Capacity: {item.capacity}</p>
+        <p className="flex items-center gap-1">
+          Capacity: {formatCapacity(item.capacity)}
+          {pinnedCar && pinnedCar.name !== item.name && (
+            <Badge
+              className={`ml-2 ${getComparableValue(item.capacity) > getComparableValue(pinnedCar.capacity) ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"}`}
+            >
+              {calculatePercentage(getComparableValue(item.capacity), getComparableValue(pinnedCar.capacity)) > 0 ? "+" : ""}
+              {calculatePercentage(getComparableValue(item.capacity), getComparableValue(pinnedCar.capacity))}%
+            </Badge>
+          )}
+        </p>
         <p className="flex items-center gap-1">
           Estimated Cabin Space: {(item.estimatedCabinSpace / 1000000000).toPrecision(2)} m^3
           <InfoPopover title="Estimated Cabin Space" srText="What is Estimated Cabin Space?" text={` This is an approximation of the interior volume available for passengers. 
@@ -321,6 +368,9 @@ export default function VehicleDimensions() {
     wheelbase: [2100, 5500],
     turnRadius: [3, 15],
     groundClearence: [0, 500],
+    power: [0, 1100],
+    torque: [0, 750],
+    capacity: [0, 130000],
   })
   const [pinnedCar, setPinnedCar] = useState<CarData | null>(null)
   const [starredCars, starcar] = useState<string[] | null>(null)
@@ -339,6 +389,9 @@ export default function VehicleDimensions() {
     | "estimatedCabinSpace"
     | "sizeToWeightRatio"
     | "dragCoefficient"
+    | "power"
+    | "torque"
+    | "capacity"
   >("name")
   const [sortOrder, setSortOrder] = useState<"asc" | "desc">("asc")
   const [manufacturerFilter, setManufacturerFilter] = useState<string>("All")
@@ -368,7 +421,7 @@ export default function VehicleDimensions() {
       ...volvo,
       ...jeep,
       ...vinfast,
-    ],
+    ] as CarData[],
     [],
   )
 
@@ -390,6 +443,18 @@ export default function VehicleDimensions() {
         Math.min(...data.map((car) => car.groundClearance)),
         Math.max(...data.map((car) => car.groundClearance)),
       ],
+      power: [
+        Math.min(...data.map((car) => getComparableValue(car.power))),
+        Math.max(...data.map((car) => getComparableValue(car.power))),
+      ],
+      torque: (() => {
+        const vals = data.map((car) => car.torque).filter((v): v is number | number[] => v !== undefined).map(getComparableValue)
+        return vals.length > 0 ? [Math.min(...vals), Math.max(...vals)] : [0, 0]
+      })(),
+      capacity: (() => {
+        const vals = data.map((car) => car.capacity).filter((v): v is number | number[] => v !== undefined).map(getComparableValue)
+        return vals.length > 0 ? [Math.min(...vals), Math.max(...vals)] : [0, 0]
+      })(),
     }),
     [data],
   )
@@ -414,7 +479,11 @@ export default function VehicleDimensions() {
           item.turnRadius < dimensions.turnRadius[1] &&
           item.turnRadius > dimensions.turnRadius[0] &&
           item.groundClearance < dimensions.groundClearence[1] &&
-          item.groundClearance > dimensions.groundClearence[0]
+          item.groundClearance > dimensions.groundClearence[0] &&
+          getComparableValue(item.power) < dimensions.power[1] &&
+          getComparableValue(item.power) > dimensions.power[0] &&
+          (item.torque === undefined || (getComparableValue(item.torque) < dimensions.torque[1] && getComparableValue(item.torque) > dimensions.torque[0])) &&
+          (item.capacity === undefined || (getComparableValue(item.capacity) < dimensions.capacity[1] && getComparableValue(item.capacity) > dimensions.capacity[0]))
         )
       })
       .filter((item) => {
@@ -424,8 +493,8 @@ export default function VehicleDimensions() {
 
         return comparisons.every((comparison) => {
           if (pinnedCar) {
-            const carValue = item[comparison.field]
-            const pinnedCarValue = pinnedCar[comparison.field]
+            const carValue = getComparableValue(item[comparison.field] as number | number[])
+            const pinnedCarValue = getComparableValue(pinnedCar[comparison.field] as number | number[])
 
             if (comparison.operator === ">") {
               return carValue > pinnedCarValue
@@ -437,14 +506,16 @@ export default function VehicleDimensions() {
         })
       })
       .sort((a, b) => {
+        const aVal = sortBy === "name" || sortBy === "manufacturer" ? 0 : getComparableValue(a[sortBy] as number | number[])
+        const bVal = sortBy === "name" || sortBy === "manufacturer" ? 0 : getComparableValue(b[sortBy] as number | number[])
         if (sortOrder === "asc") {
           return sortBy === "name" || sortBy === "manufacturer"
             ? a.name.localeCompare(b.name)
-            : (a[sortBy] as number) - (b[sortBy] as number)
+            : aVal - bVal
         } else {
           return sortBy === "name" || sortBy === "manufacturer"
             ? b.name.localeCompare(a.name)
-            : (b[sortBy] as number) - (a[sortBy] as number)
+            : bVal - aVal
         }
       })
   }, [data, dimensions, searchQuery, manufacturerFilter, comparisons, pinnedCar, starredCars, sortBy, sortOrder])
@@ -548,6 +619,9 @@ export default function VehicleDimensions() {
                 <option value="estimatedCabinSpace">Sort by Estimated Cabin Space</option>
                 <option value="sizeToWeightRatio">Sort by Size to Weight Ratio</option>
                 <option value="dragCoefficient">Sort by Drag Coefficient</option>
+                <option value="power">Sort by Power</option>
+                <option value="torque">Sort by Torque</option>
+                <option value="capacity">Sort by Capacity</option>
               </select>
               <button
                 className="px-3 py-1 border rounded-md flex items-center gap-1"
@@ -587,6 +661,9 @@ export default function VehicleDimensions() {
                     <option value="estimatedCabinSpace">Estimated Cabin Space</option>
                     <option value="sizeToWeightRatio">Size to Weight Ratio</option>
                     <option value="dragCoefficient">Drag Coefficient</option>
+                    <option value="power">Power</option>
+                    <option value="torque">Torque</option>
+                    <option value="capacity">Capacity</option>
                   </select>
                   <select
                     className="px-2 py-1 border rounded-md"
@@ -743,6 +820,69 @@ export default function VehicleDimensions() {
                   step={10}
                   value={dimensions.groundClearence}
                   onValueChange={(value: number[]) => handleSliderChange(value, "groundClearence")}
+                  className="cursor-grab active:cursor-grabbing"
+                />
+              </div>
+
+              <div className="space-y-2">
+                <div className="flex justify-between">
+                  <label htmlFor="power-slider" className="text-sm font-medium">
+                    Power (bhp)
+                  </label>
+                  <div className="flex gap-2">
+                    <Badge variant="outline">Min: {dimensions.power[0]}</Badge>
+                    <Badge variant="outline">Max: {dimensions.power[1]}</Badge>
+                  </div>
+                </div>
+                <Slider
+                  id="power-slider"
+                  min={initialDimensions.power[0]}
+                  max={initialDimensions.power[1]}
+                  step={10}
+                  value={dimensions.power}
+                  onValueChange={(value: number[]) => handleSliderChange(value, "power")}
+                  className="cursor-grab active:cursor-grabbing"
+                />
+              </div>
+
+              <div className="space-y-2">
+                <div className="flex justify-between">
+                  <label htmlFor="torque-slider" className="text-sm font-medium">
+                    Torque (Nm)
+                  </label>
+                  <div className="flex gap-2">
+                    <Badge variant="outline">Min: {dimensions.torque[0]}</Badge>
+                    <Badge variant="outline">Max: {dimensions.torque[1]}</Badge>
+                  </div>
+                </div>
+                <Slider
+                  id="torque-slider"
+                  min={initialDimensions.torque[0]}
+                  max={initialDimensions.torque[1]}
+                  step={10}
+                  value={dimensions.torque}
+                  onValueChange={(value: number[]) => handleSliderChange(value, "torque")}
+                  className="cursor-grab active:cursor-grabbing"
+                />
+              </div>
+
+              <div className="space-y-2">
+                <div className="flex justify-between">
+                  <label htmlFor="capacity-slider" className="text-sm font-medium">
+                    Capacity (kWh)
+                  </label>
+                  <div className="flex gap-2">
+                    <Badge variant="outline">Min: {(dimensions.capacity[0] / 1000).toFixed(0)}</Badge>
+                    <Badge variant="outline">Max: {(dimensions.capacity[1] / 1000).toFixed(0)}</Badge>
+                  </div>
+                </div>
+                <Slider
+                  id="capacity-slider"
+                  min={initialDimensions.capacity[0]}
+                  max={initialDimensions.capacity[1]}
+                  step={1000}
+                  value={dimensions.capacity}
+                  onValueChange={(value: number[]) => handleSliderChange(value, "capacity")}
                   className="cursor-grab active:cursor-grabbing"
                 />
               </div>
