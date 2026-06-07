@@ -14,6 +14,7 @@ export const vinfast = [
     price: 7860, // Approx ₹7.86 Lakh INR -> USD (based on India pricing)[](vinfast/vf3)
     capacity: 18600,
     manufacturer: "VinFast",
+fuelType: 3,
     weight: 850, // kg (estimated kerb weight for compact EV)
     estimatedCabinSpace: 3311335290, // (1622 - 191) * 2075 * 1679
     sizeToWeightRatio: 3895688.58, // 3311335290 / 850
@@ -34,6 +35,7 @@ export const vinfast = [
     price: 16490, // Approx ₹16.49 Lakh INR -> USD[](vinfast-cars/)
     capacity: 59600,
     manufacturer: "VinFast",
+fuelType: 3,
     weight: 1800, // kg (estimated for compact electric SUV)
     estimatedCabinSpace: 10505495460, // (1594 - 170) * 2730 * 1820
     sizeToWeightRatio: 5836386.37, // 10505495460 / 1800
@@ -54,6 +56,7 @@ export const vinfast = [
     price: 20890, // Approx ₹20.89 Lakh INR -> USD[](vinfast-cars/)
     capacity: [59600, 70800],
     manufacturer: "VinFast",
+fuelType: 3,
     weight: 2000, // kg (estimated for mid-size electric SUV)
     estimatedCabinSpace: 12755066400, // (1644 - 190) * 2840 * 1890
     sizeToWeightRatio: 6377533.20, // 12755066400 / 2000
@@ -74,6 +77,7 @@ export const vinfast = [
     price: 41100, // USD (Eco model MSRP)[](vf-8)
     capacity: [82000, 87700],
     manufacturer: "VinFast",
+fuelType: 3,
     weight: 2400, // kg (estimated for mid-size electric SUV)[](specs)
     estimatedCabinSpace: 15967256550, // (1667 - 175) * 2950 * 1934
     sizeToWeightRatio: 6653023.56, // 15967256550 / 2400
@@ -94,6 +98,7 @@ export const vinfast = [
     price: 69000, // USD (estimated MSRP for full-size EV)[](VinFast_VF_9)
     capacity: 92000,
     manufacturer: "VinFast",
+fuelType: 3,
     weight: 2800, // kg (estimated for full-size electric SUV)
     estimatedCabinSpace: 20336460000, // (1696 - 180) * 3150 * 2000
     sizeToWeightRatio: 7262307.14, // 20336460000 / 2800
@@ -116,6 +121,7 @@ export const renault = [
       turnRadius: 4.7, // (Kerb-to-kerb, wall-to-wall is 4.9m)
       price: 5252, // Corrected: Assumed 4.5 Lakh INR -> USD
       manufacturer: "Renault",
+fuelType: 1,
       weight: 750, // Approx Kerb Weight (kg)
       estimatedCabinSpace: 4952811604, // Recalculated: ((1478 - 180) * 2422 * 1579)
       sizeToWeightRatio: 6603748.81, // Recalculated: (4952811604 / 750)
@@ -135,6 +141,7 @@ export const renault = [
       turnRadius: 5.0, // Corrected (was 5.2)
       price: 7819, // Corrected: Assumed 6.7 Lakh INR -> USD
       manufacturer: "Renault",
+fuelType: 1,
       weight: 950, // Approx Kerb Weight (kg)
       estimatedCabinSpace: 6704311344, // Recalculated: ((1643 - 182) * 2636 * 1739)
       sizeToWeightRatio: 7057169.84, // Recalculated: (6704311344 / 950)
@@ -154,6 +161,7 @@ export const renault = [
       turnRadius: 5.0, // Corrected (was 5.2)
       price: 7002, // Corrected: Assumed 6 Lakh INR -> USD
       manufacturer: "Renault",
+fuelType: 1,
       weight: 980, // Approx Kerb Weight (kg)
       estimatedCabinSpace: 6146875000, // Recalculated: ((1605 - 205) * 2500 * 1750)
       sizeToWeightRatio: 6272321.43, // Recalculated: (6146875000 / 980)
@@ -173,6 +181,7 @@ export const renault = [
       turnRadius: 5.2, // Corrected (was 5.3)
       price: 9919, // Corrected: Assumed 8.5 Lakh INR -> USD
       manufacturer: "Renault",
+fuelType: 1,
       weight: 1150, // Approx Kerb Weight (kg)
       estimatedCabinSpace: 7258245480, // Recalculated: ((1695 - 205) * 2673 * 1822)
       sizeToWeightRatio: 6311517.81, // Recalculated: (7258245480 / 1150)
@@ -194,6 +203,7 @@ export const nissan = [
       turnRadius: 5.0, // Corrected (was 5.2)
       price: 6419, // Corrected: Assumed 5.5 Lakh INR -> USD
       manufacturer: "Nissan",
+fuelType: 1,
       weight: 970, // Approx Kerb Weight (kg)
       estimatedCabinSpace: 6002415000, // Recalculated: ((1572 - 205) * 2500 * 1758)
       sizeToWeightRatio: 6188056.70, // Recalculated: (6002415000 / 970)
@@ -213,6 +223,7 @@ export const nissan = [
       turnRadius: 5.2, // Corrected (was 5.3)
       price: 10503, // Corrected: Assumed 9 Lakh INR -> USD
       manufacturer: "Nissan",
+fuelType: 1,
       weight: 1180, // Approx Kerb Weight (kg)
       estimatedCabinSpace: 6983526822, // Recalculated: ((1651 - 210) * 2673 * 1813)
       sizeToWeightRatio: 5918243.07, // Recalculated: (6983526822 / 1180)
@@ -235,6 +246,7 @@ export const byd = [
       price: 32000, // Assumed USD
       capacity: 60480,
       manufacturer: "BYD",
+fuelType: 3,
       weight: 1750, // Corrected Kerb Weight (was 1700kg)
       estimatedCabinSpace: 7346400000, // Recalculated: ((1615 - 175) * 2720 * 1875)
       sizeToWeightRatio: 4197942.86, // Recalculated: (7346400000 / 1750)
@@ -255,6 +267,7 @@ export const byd = [
       price: 45000, // Assumed USD
       capacity: 82560,
       manufacturer: "BYD",
+fuelType: 3,
       weight: 1850, // Approx Kerb Weight (kg)
       estimatedCabinSpace: 7107330000, // Recalculated: ((1460 - 120) * 2920 * 1875)
       sizeToWeightRatio: 3841794.59, // Recalculated: (7107330000 / 1850)
@@ -276,6 +289,7 @@ export const skoda = [
         turnRadius: 5.3, // Corrected Turn Radius (was 5.2)
         price: 18672, // Corrected: Assumed 16 Lakh INR -> USD
         manufacturer: "Skoda",
+fuelType: 1,
         weight: 1150, // Approx Kerb Weight (kg)
         estimatedCabinSpace: 6169958112, // Recalculated: ((1507 - 179) * 2651 * 1752)
         sizeToWeightRatio: 5365181.00, // Recalculated: (6169958112 / 1150)
@@ -295,6 +309,7 @@ export const skoda = [
       turnRadius: 5.0, // Corrected: Estimate (was 5.2)
       price: 11670, // Corrected: Assumed Lower Est. 10 Lakh INR -> USD (was 18k USD)
       manufacturer: "Škoda",
+fuelType: 1,
       weight: 1100, // Estimated Kerb Weight (kg)
       estimatedCabinSpace: 6545106414, // Recalculated: ((1619 - 189) * 2566 * 1783)
       sizeToWeightRatio: 5950096.74, // Recalculated: (6545106414 / 1100)
@@ -314,6 +329,7 @@ export const skoda = [
       turnRadius: 5.8, // Seems correct
       price: 45510, // Corrected: India price ~39 Lakh INR -> USD (was 35k USD)
       manufacturer: "Škoda",
+fuelType: 1,
       weight: 1793, // Corrected Kerb Weight (kg, L&K)
       estimatedCabinSpace: 7748264592, // Recalculated: ((1681 - 192) * 2791 * 1882)
       sizeToWeightRatio: 4321397.43, // Recalculated: (7748264592 / 1793)
@@ -333,6 +349,7 @@ export const skoda = [
       turnRadius: 5.3, // Seems correct
       price: 14004, // Corrected: Assumed Starting 12 Lakh INR -> USD (was 22k USD)
       manufacturer: "Škoda",
+fuelType: 1,
       weight: 1200, // Approx Kerb Weight (kg)
       estimatedCabinSpace: 6646078560, // Recalculated: ((1612 - 188) * 2651 * 1760)
       sizeToWeightRatio: 5538398.80, // Recalculated: (6646078560 / 1200)
@@ -352,6 +369,7 @@ export const skoda = [
       turnRadius: 5.2, // Seems correct
       price: 31509, // Corrected: Assumed ~27 Lakh INR -> USD (was 28k USD)
       manufacturer: "Škoda",
+fuelType: 1,
       weight: 1450, // Corrected Kerb Weight (kg, last gen)
       estimatedCabinSpace: 6530614080, // Recalculated: ((1469 - 137) * 2680 * 1829)
       sizeToWeightRatio: 4503871.78, // Recalculated: (6530614080 / 1450)
@@ -371,6 +389,7 @@ export const skoda = [
       turnRadius: 5.6, // Seems correct
       price: 60684, // Corrected: India CBU price ~52 Lakh INR -> USD (was 38k USD)
       manufacturer: "Škoda",
+fuelType: 1,
       weight: 1565, // Corrected Kerb Weight (kg, current CBU L&K)
       estimatedCabinSpace: 7021130894, // Recalculated: ((1469 - 151) * 2841 * 1864)
       sizeToWeightRatio: 4486345.62, // Recalculated: (7021130894 / 1565)
@@ -390,6 +409,7 @@ export const skoda = [
       turnRadius: 5.3, // Corrected Turn Radius (was 5.1)
       price: 11087, // Corrected: Assumed ~9.5 Lakh INR -> USD (was 19k USD)
       manufacturer: "Škoda",
+fuelType: 1,
       weight: 1150, // Corrected Kerb Weight (kg, approx)
       estimatedCabinSpace: 5646656944, // Recalculated: ((1466 - 163) * 2552 * 1699)
       sizeToWeightRatio: 4910136.47, // Recalculated: (5646656944 / 1150)
@@ -411,6 +431,7 @@ export const maruti = [
         turnRadius: 5.4, // Corrected Turn Radius (was 5.3)
         price: 12837, // Corrected: Assumed Starting ~11 Lakh INR -> USD (was 23k USD)
         manufacturer: "Maruti Suzuki",
+fuelType: 2,
         weight: 1150, // Corrected Kerb Weight (kg, starting Mild Hybrid)
         estimatedCabinSpace: 6688115000, // Recalculated: ((1645 - 210) * 2600 * 1795)
         sizeToWeightRatio: 5815752.17, // Recalculated: (6688115000 / 1150)
@@ -430,6 +451,7 @@ export const maruti = [
         turnRadius: 5.4,
         price: 10737, // Corrected: Assumed Starting ~9.2 Lakh INR -> USD (was 16k USD)
         manufacturer: "Maruti Suzuki",
+fuelType: 1,
         weight: 1030, // Corrected Kerb Weight (kg, starting MT)
         estimatedCabinSpace: 6026967500, // Recalculated: ((1485 - 170) * 2650 * 1730)
         sizeToWeightRatio: 5851424.76, // Recalculated: (6026967500 / 1030)
@@ -449,6 +471,7 @@ export const maruti = [
         turnRadius: 5.7,
         price: 14616, // Corrected: Starting ~12.5 Lakh INR -> USD (was 12k USD)
         manufacturer: "Maruti Suzuki",
+fuelType: 1,
         weight: 1190, // Corrected Kerb Weight (kg, starting MT 5-door)
         estimatedCabinSpace: 5605432750, // Recalculated: ((1720 - 210) * 2590 * 1645)
         sizeToWeightRatio: 4710447.69, // Recalculated: (5605432750 / 1190)
@@ -468,6 +491,7 @@ export const maruti = [
         turnRadius: 5.9, // Corrected Turn Radius (was 5.6)
         price: 29175, // Corrected: Starting ~25 Lakh INR -> USD (was 34k USD)
         manufacturer: "Maruti Suzuki",
+fuelType: 2,
         weight: 1685, // Corrected Kerb Weight (kg, starting Zeta+)
         estimatedCabinSpace: 8448915000, // Recalculated: ((1790 - 185) * 2850 * 1850)
         sizeToWeightRatio: 5014192.88, // Recalculated: (8448915000 / 1685)
@@ -487,6 +511,7 @@ export const maruti = [
         turnRadius: 4.7,
         price: 6828, // Corrected: Starting ~5.85 Lakh INR -> USD (was 7k USD)
         manufacturer: "Maruti Suzuki",
+fuelType: 1,
         weight: 840, // Corrected Kerb Weight (kg, starting MT)
         estimatedCabinSpace: 5821503350, // Recalculated: ((1595 - 180) * 2435 * 1690)
         sizeToWeightRatio: 6930361.13, // Recalculated: (5821503350 / 840)
@@ -506,6 +531,7 @@ export const maruti = [
         turnRadius: 4.5,
         price: 4972, // Corrected: Starting ~4.26 Lakh INR -> USD (was 5k USD)
         manufacturer: "Maruti Suzuki",
+fuelType: 1,
         weight: 736, // Corrected Kerb Weight (kg, starting Std)
         estimatedCabinSpace: 4882026080, // Recalculated: ((1567 - 180) * 2380 * 1520)
         sizeToWeightRatio: 6633187.61, // Recalculated: (4882026080 / 736)
@@ -525,6 +551,7 @@ export const maruti = [
       turnRadius: 4.5, // Corrected Turn Radius (was 4.9)
       price: 4656, // Corrected: Starting ~3.99 Lakh INR -> USD (was 4k USD)
       manufacturer: "Maruti Suzuki", // Corrected Manufacturer
+fuelType: 1,
       weight: 730, // Corrected Kerb Weight (kg, starting Std)
       estimatedCabinSpace: 4744155200, // Recalculated: ((1520 - 160) * 2380 * 1490)
       sizeToWeightRatio: 6498842.74, // Recalculated: (4744155200 / 730)
@@ -544,6 +571,7 @@ export const maruti = [
       turnRadius: 4.7, // Corrected Turn Radius (was 5.2)
       price: 6479, // Corrected: Starting ~5.55 Lakh INR -> USD (was 5k USD)
       manufacturer: "Maruti Suzuki", // Corrected Manufacturer
+fuelType: 1,
       weight: 810, // Corrected Kerb Weight (kg, starting 1.0L MT)
       estimatedCabinSpace: 5490076500, // Recalculated: ((1675 - 165) * 2435 * 1620)
       sizeToWeightRatio: 6777872.22, // Recalculated: (5490076500 / 810)
@@ -563,6 +591,7 @@ export const maruti = [
       turnRadius: 4.8, // Corrected Turn Radius (New Gen)
       price: 7586, // Corrected: Starting ~6.5 Lakh INR -> USD
       manufacturer: "Maruti Suzuki", // Corrected Manufacturer
+fuelType: 1,
       weight: 920, // Corrected Kerb Weight (kg, New Gen starting MT)
       estimatedCabinSpace: 5814567500, // Recalculated: ((1520 - 163) * 2450 * 1735)
       sizeToWeightRatio: 6320182.07, // Recalculated: (5814567500 / 920)
@@ -582,6 +611,7 @@ export const maruti = [
       turnRadius: 4.85, // Corrected Turn Radius (was 5.3)
       price: 7702, // Corrected: Starting ~6.6 Lakh INR -> USD (was 7.5k USD)
       manufacturer: "Maruti Suzuki", // Corrected Manufacturer
+fuelType: 1,
       weight: 925, // Corrected Kerb Weight (kg, starting MT)
       estimatedCabinSpace: 5840118000, // Recalculated: ((1500 - 170) * 2520 * 1745)
       sizeToWeightRatio: 6313641.08, // Recalculated: (5840118000 / 925)
@@ -601,6 +631,7 @@ export const maruti = [
       turnRadius: 4.8, // Corrected Turn Radius (was 5.3)
       price: 7586, // Corrected: Starting ~6.5 Lakh INR -> USD (was 7k USD)
       manufacturer: "Maruti Suzuki", // Corrected Manufacturer
+fuelType: 1,
       weight: 880, // Corrected Kerb Weight (kg, starting MT)
       estimatedCabinSpace: 5754876250, // Recalculated: ((1515 - 163) * 2450 * 1735)
       sizeToWeightRatio: 6539632.10, // Recalculated: (5754876250 / 880)
@@ -620,6 +651,7 @@ export const maruti = [
       turnRadius: 5.2, // Corrected Turn Radius (was 5.6)
       price: 9683, // Corrected: Starting ~8.3 Lakh INR -> USD (was 8k USD)
       manufacturer: "Maruti Suzuki", // Corrected Manufacturer
+fuelType: 1,
       weight: 1110, // Corrected Kerb Weight (kg, starting MT)
       estimatedCabinSpace: 6654975000, // Recalculated: ((1685 - 198) * 2500 * 1790)
       sizeToWeightRatio: 5995472.97, // Recalculated: (6654975000 / 1110)
@@ -639,6 +671,7 @@ export const maruti = [
       turnRadius: 5.2, // Corrected Turn Radius (was 6.8)
       price: 10139, // Corrected: Starting ~8.69 Lakh INR -> USD (was 10k USD)
       manufacturer: "Maruti Suzuki", // Corrected Manufacturer
+fuelType: 1,
       weight: 1150, // Corrected Kerb Weight (kg, starting MT)
       estimatedCabinSpace: 7168895000, // Recalculated: ((1690 - 185) * 2740 * 1735)
       sizeToWeightRatio: 6233821.74, // Recalculated: (7168895000 / 1150)
@@ -658,6 +691,7 @@ export const maruti = [
       turnRadius: 5.5, // Corrected Turn Radius (was 6.6)
       price: 11087, // Corrected: Assumed ~9.5 Lakh INR -> USD
       manufacturer: "Maruti Suzuki", // Corrected Manufacturer
+fuelType: 1,
       weight: 1130, // Corrected Kerb Weight (kg, starting MT Petrol)
       estimatedCabinSpace: 6538230000, // Recalculated: ((1595 - 180) * 2600 * 1785)
       sizeToWeightRatio: 5786044.25, // Recalculated: (6538230000 / 1130)
@@ -677,6 +711,7 @@ export const maruti = [
       turnRadius: 4.7, // Corrected Turn Radius (was 4.9)
       price: 6244, // Corrected: Starting ~5.35 Lakh INR -> USD (was 5.5k USD)
       manufacturer: "Maruti Suzuki", // Corrected Manufacturer
+fuelType: 1,
       weight: 800, // Corrected Kerb Weight (kg, starting MT)
       estimatedCabinSpace: 5579855975, // Recalculated: ((1555 - 170) * 2435 * 1655)
       sizeToWeightRatio: 6974819.97, // Recalculated: (5579855975 / 800)
@@ -696,6 +731,7 @@ export const maruti = [
       turnRadius: 5.2, // Corrected Turn Radius (was 6.9)
       price: 13420, // Corrected: Starting ~11.5 Lakh INR -> USD (was 11k USD)
       manufacturer: "Maruti Suzuki", // Corrected Manufacturer
+fuelType: 1,
       weight: 1180, // Approx Kerb Weight (kg)
       estimatedCabinSpace: 7630817500, // Recalculated: ((1755 - 180) * 2740 * 1775)
       sizeToWeightRatio: 6466794.49, // Recalculated: (7630817500 / 1180)
@@ -715,6 +751,7 @@ export const maruti = [
       turnRadius: 4.9, // Corrected Turn Radius (was 5.1)
       price: 8753, // Corrected: Starting ~7.5 Lakh INR -> USD (was 8k USD)
       manufacturer: "Maruti Suzuki", // Corrected Manufacturer
+fuelType: 1,
       weight: 965, // Corrected Kerb Weight (kg, starting 1.2L MT)
       estimatedCabinSpace: 6011316000, // Recalculated: ((1550 - 190) * 2520 * 1765)
       sizeToWeightRatio: 6229342.90, // Recalculated: (6011316000 / 965)
@@ -735,6 +772,7 @@ export const maruti = [
       price: 23340, // ~20 Lakh INR -> USD
       capacity: 48000,
       manufacturer: "Maruti Suzuki",
+fuelType: 3,
       weight: 1700, // Kerb weight approx (EV battery adds weight)
       estimatedCabinSpace: 6688115000, // Same platform as Grand Vitara
       sizeToWeightRatio: 3934185.29, // 6688115000 / 1700
@@ -756,6 +794,7 @@ export const hyundai = [
       turnRadius: 5.2,
       price: 8169, // Corrected: Assumed 7 Lakh INR -> USD
       manufacturer: "Hyundai",
+fuelType: 1,
       weight: 990, // Corrected Kerb Weight (kg, starting 1.2 MT)
       estimatedCabinSpace: 5962531500, // Recalculated: ((1505 - 170) * 2580 * 1775)
       sizeToWeightRatio: 6022759.09, // Recalculated: (5962531500 / 990)
@@ -775,6 +814,7 @@ export const hyundai = [
       turnRadius: 5.2, // Corrected Turn Radius (was 5.3)
       price: 12837, // Corrected: Starting ~11 Lakh INR -> USD (was 10k USD)
       manufacturer: "Hyundai",
+fuelType: 1,
       weight: 1100, // Corrected Kerb Weight (kg, starting 1.5 MT)
       estimatedCabinSpace: 6207267750, // Recalculated: ((1475 - 165) * 2670 * 1765)
       sizeToWeightRatio: 5642970.68, // Recalculated: (6207267750 / 1100)
@@ -794,6 +834,7 @@ export const hyundai = [
       turnRadius: 5.3, // Corrected Turn Radius (was 5.8)
       price: 12837, // Corrected: Starting ~11 Lakh INR -> USD (was 12k USD)
       manufacturer: "Hyundai",
+fuelType: 1,
       weight: 1250, // Approx Kerb Weight (kg)
       estimatedCabinSpace: 6743116500, // Recalculated: ((1635 - 190) * 2610 * 1790)
       sizeToWeightRatio: 5394493.20, // Recalculated: (6743116500 / 1250)
@@ -813,6 +854,7 @@ export const hyundai = [
       turnRadius: 5.9,
       price: 32679, // Corrected: Starting ~28 Lakh INR -> USD (was 25k USD)
       manufacturer: "Hyundai",
+fuelType: 0,
       weight: 1550, // Corrected Kerb Weight (kg, approx Petrol)
       estimatedCabinSpace: 7554634875, // Recalculated: ((1665 - 192) * 2755 * 1865)
       sizeToWeightRatio: 4873957.98, // Recalculated: (7554634875 / 1550)
@@ -832,6 +874,7 @@ export const hyundai = [
       turnRadius: 4.7, // Corrected Turn Radius (was 4.8)
       price: 5368, // Corrected: Assumed ~4.6 Lakh INR -> USD (was 5k USD)
       manufacturer: "Hyundai",
+fuelType: 1,
       weight: 880, // Corrected Kerb Weight (kg, starting MT)
       estimatedCabinSpace: 5510580000, // Recalculated: ((1560 - 165) * 2400 * 1645)
       sizeToWeightRatio: 6262022.73, // Recalculated: (5510580000 / 880)
@@ -851,6 +894,7 @@ export const hyundai = [
       turnRadius: 4.7, // Corrected Turn Radius (was 5.0)
       price: 7471, // Corrected: Starting ~6.4 Lakh INR -> USD (was 6k USD)
       manufacturer: "Hyundai",
+fuelType: 1,
       weight: 950, // Corrected Kerb Weight (kg, starting Petrol MT)
       estimatedCabinSpace: 5575980000, // Recalculated: ((1520 - 165) * 2450 * 1680)
       sizeToWeightRatio: 5869452.63, // Recalculated: (5575980000 / 950)
@@ -870,6 +914,7 @@ export const hyundai = [
       turnRadius: 5.4, // Corrected Turn Radius (was 6.1)
       price: 19256, // Corrected: Starting ~16.5 Lakh INR -> USD (was 15k USD)
       manufacturer: "Hyundai",
+fuelType: 0,
       weight: 1400, // Corrected Kerb Weight (kg, approx Petrol MT)
       estimatedCabinSpace: 7299810000, // Recalculated: ((1675 - 200) * 2760 * 1790)
       sizeToWeightRatio: 5214150.00, // Recalculated: (7299810000 / 1400)
@@ -889,6 +934,7 @@ export const hyundai = [
       turnRadius: 5.1, // Corrected Turn Radius (was 5.5)
       price: 9100, // Corrected: Starting ~7.8 Lakh INR -> USD (was 8.5k USD)
       manufacturer: "Hyundai",
+fuelType: 1,
       weight: 1050, // Corrected Kerb Weight (kg, approx 1.2 MT)
       estimatedCabinSpace: 6301537500, // Recalculated: ((1617 - 190) * 2500 * 1770)
       sizeToWeightRatio: 6001464.29, // Recalculated: (6301537500 / 1050)
@@ -908,6 +954,7 @@ export const hyundai = [
       turnRadius: 4.7, // Corrected Turn Radius (was 5.3)
       price: 7002, // Corrected: Starting ~6 Lakh INR -> USD (was 6.5k USD)
       manufacturer: "Hyundai",
+fuelType: 1,
       weight: 990, // Corrected Kerb Weight (kg, starting Petrol MT)
       estimatedCabinSpace: 6072927750, // Recalculated: ((1631 - 185) * 2450 * 1710)
       sizeToWeightRatio: 6134270.45, // Recalculated: (6072927750 / 990)
@@ -929,6 +976,7 @@ export const honda = [
       turnRadius: 5.3, // Corrected Turn Radius (was 5.6)
       price: 13887, // Corrected: Starting ~11.9 Lakh INR -> USD (was 9k USD)
       manufacturer: "Honda",
+fuelType: 1,
       weight: 1107, // Corrected Kerb Weight (kg, starting MT)
       estimatedCabinSpace: 5858090080, // Recalculated: ((1489 - 165) * 2600 * 1748)
       sizeToWeightRatio: 5291860.96, // Recalculated: (5858090080 / 1107)
@@ -948,6 +996,7 @@ export const honda = [
       turnRadius: 5.85, // Corrected Turn Radius
       price: 21006, // Corrected: Assumed ~18 Lakh INR -> USD
       manufacturer: "Honda",
+fuelType: 1,
       weight: 1300, // Corrected Kerb Weight (kg, approx Petrol CVT)
       estimatedCabinSpace: 6113941800, // Recalculated: ((1433 - 170) * 2700 * 1799)
       sizeToWeightRatio: 4703032.15, // Recalculated: (6113941800 / 1300)
@@ -967,6 +1016,7 @@ export const honda = [
       turnRadius: 5.5, // Corrected Turn Radius (was 6.3)
       price: 32679, // Corrected: Assumed ~28 Lakh INR -> USD
       manufacturer: "Honda",
+fuelType: 1,
       weight: 1545, // Corrected Kerb Weight (kg, last Petrol CVT)
       estimatedCabinSpace: 7247660440, // Recalculated: ((1679 - 198) * 2660 * 1855)
       sizeToWeightRatio: 4691042.36, // Recalculated: (7247660440 / 1545)
@@ -986,6 +1036,7 @@ export const honda = [
       turnRadius: 5.1, // Corrected Turn Radius (was 5.4)
       price: 9336, // Corrected: Assumed 8 Lakh INR -> USD
       manufacturer: "Honda",
+fuelType: 1,
       weight: 1007, // Corrected Kerb Weight (kg, starting MT)
       estimatedCabinSpace: 5879142760, // Recalculated: ((1544 - 165) * 2530 * 1694)
       sizeToWeightRatio: 5838274.84, // Recalculated: (5879142760 / 1007)
@@ -1005,6 +1056,7 @@ export const honda = [
       turnRadius: 5.3, // Corrected Turn Radius (was 5.6)
       price: 10503, // Corrected: Assumed 9 Lakh INR -> USD
       manufacturer: "Honda",
+fuelType: 1,
       weight: 1087, // Corrected Kerb Weight (kg, starting Petrol MT)
       estimatedCabinSpace: 6246337170, // Recalculated: ((1601 - 188) * 2555 * 1734)
       sizeToWeightRatio: 5746399.97, // Recalculated: (6246337170 / 1087)
@@ -1024,6 +1076,7 @@ export const honda = [
       turnRadius: 4.7, // Corrected Turn Radius (was 5.5)
       price: 8169, // Corrected: Starting ~7 Lakh INR -> USD (was 7.5k USD)
       manufacturer: "Honda",
+fuelType: 1,
       weight: 934, // Corrected Kerb Weight (kg, starting MT)
       estimatedCabinSpace: 5498026650, // Recalculated: ((1501 - 170) * 2470 * 1695)
       sizeToWeightRatio: 5886538.17, // Recalculated: (5498026650 / 934)
@@ -1043,6 +1096,7 @@ export const honda = [
       turnRadius: 5.2, // Corrected Turn Radius (was 6.9)
       price: 13420, // Corrected: Starting ~11.5 Lakh INR -> USD (was 12k USD)
       manufacturer: "Honda",
+fuelType: 1,
       weight: 1213, // Corrected Kerb Weight (kg, starting MT)
       estimatedCabinSpace: 6779455000, // Recalculated: ((1650 - 220) * 2650 * 1790)
       sizeToWeightRatio: 5588998.35, // Recalculated: (6779455000 / 1213)
@@ -1064,6 +1118,7 @@ export const tesla = [ // Note: Tesla not officially sold in India yet. Specs ar
       price: 74990, // Base USD MSRP (subject to change)
       capacity: 95000,
       manufacturer: "Tesla",
+fuelType: 3,
       weight: 2100, // Approx Kerb Weight (kg)
       estimatedCabinSpace: 7618697600, // Recalculated: ((1445 - 130) * 2960 * 1964)
       sizeToWeightRatio: 3627951.24, // Recalculated: (7618697600 / 2100)
@@ -1083,6 +1138,7 @@ export const tesla = [ // Note: Tesla not officially sold in India yet. Specs ar
       price: 38990, // Base USD MSRP (subject to change)
       capacity: 57500,
       manufacturer: "Tesla",
+fuelType: 3,
       weight: 1765, // Corrected Kerb Weight (kg, RWD Highland)
       estimatedCabinSpace: 6921913375, // Recalculated: ((1441 - 138) * 2875 * 1849)
       sizeToWeightRatio: 3921764.00, // Recalculated: (6921913375 / 1765)
@@ -1102,6 +1158,7 @@ export const tesla = [ // Note: Tesla not officially sold in India yet. Specs ar
       price: 79990, // Base USD MSRP (subject to change)
       capacity: 95000,
       manufacturer: "Tesla",
+fuelType: 3,
       weight: 2352, // Corrected Kerb Weight (kg, base model)
       estimatedCabinSpace: 9167141965, // Recalculated: ((1684 - 137) * 2965 * 1999)
       sizeToWeightRatio: 3897594.37, // Recalculated: (9167141965 / 2352)
@@ -1121,6 +1178,7 @@ export const tesla = [ // Note: Tesla not officially sold in India yet. Specs ar
       price: 43990, // Base USD MSRP (subject to change)
       capacity: 57500,
       manufacturer: "Tesla",
+fuelType: 3,
       weight: 1909, // Corrected Kerb Weight (kg, RWD)
       estimatedCabinSpace: 7560016480, // Recalculated: ((1624 - 167) * 2890 * 1921)
       sizeToWeightRatio: 3960197.16, // Recalculated: (7560016480 / 1909)
@@ -1141,6 +1199,7 @@ export const tesla = [ // Note: Tesla not officially sold in India yet. Specs ar
       price: 109000, // Original Base USD MSRP (was 200k)
       capacity: 53000,
       manufacturer: "Tesla",
+fuelType: 3,
       weight: 1235, // Corrected Kerb Weight (kg)
       estimatedCabinSpace: 4292119723, // Recalculated: ((1127 - 140) * 2352 * 1873)
       sizeToWeightRatio: 3475400.59, // Recalculated: (4292119723 / 1235)
@@ -1160,6 +1219,7 @@ export const tesla = [ // Note: Tesla not officially sold in India yet. Specs ar
       price: 60990, // Base RWD USD MSRP (subject to change)
       capacity: 123000,
       manufacturer: "Tesla",
+fuelType: 3,
       weight: 2995, // Corrected Kerb Weight (kg, AWD)
       estimatedCabinSpace: 10714057029, // Recalculated: ((1791 - 433) * 3807 * 2030)
       sizeToWeightRatio: 3577314.53, // Recalculated: (10714057029 / 2995)
@@ -1181,6 +1241,7 @@ export const mg = [
         turnRadius: 5.6, // Corrected Turn Radius (was 5.5)
         price: 11670, // Corrected: Starting ~10 Lakh INR -> USD (was 25k USD)
         manufacturer: "MG Motor",
+fuelType: 1,
         weight: 1295, // Corrected Kerb Weight (kg, starting NA MT)
         estimatedCabinSpace: 6892914150, // Recalculated: ((1650 - 180) * 2585 * 1809)
         sizeToWeightRatio: 5322713.63, // Recalculated: (6892914150 / 1295)
@@ -1201,6 +1262,7 @@ export const mg = [
         price: 8052, // Corrected: Starting ~6.9 Lakh INR -> USD (was 8k USD)
         capacity: 17300,
         manufacturer: "MG Motor",
+fuelType: 3,
         weight: 815, // Corrected Kerb Weight (kg, was 600)
         estimatedCabinSpace: 4478212500, // Recalculated: ((1640 - 165) * 2010 * 1505)
         sizeToWeightRatio: 5494740.00, // Recalculated: (4478212500 / 815)
@@ -1220,6 +1282,7 @@ export const mg = [
       turnRadius: 5.95, // Corrected Turn Radius (was 5.6)
       price: 17505, // Corrected: Assumed 15 Lakh INR -> USD
       manufacturer: "MG Motor", // Corrected Manufacturer
+fuelType: 1,
       weight: 1556, // Corrected Kerb Weight (kg, starting Petrol MT)
       estimatedCabinSpace: 7966733750, // Recalculated: ((1760 - 192) * 2750 * 1835)
       sizeToWeightRatio: 5119996.00, // Recalculated: (7966733750 / 1556)
@@ -1240,6 +1303,7 @@ export const mg = [
       price: 22173, // Corrected: Starting ~19 Lakh INR -> USD (was 22k USD)
       capacity: 50300,
       manufacturer: "MG Motor", // Corrected Manufacturer
+fuelType: 3,
       weight: 1610, // Corrected Kerb Weight (kg, current Exclusive)
       estimatedCabinSpace: 6899489790, // Recalculated: ((1649 - 177) * 2585 * 1809)
       sizeToWeightRatio: 4285397.39, // Recalculated: (6899489790 / 1610)
@@ -1259,6 +1323,7 @@ export const mg = [
       turnRadius: 6.1, // Corrected Turn Radius (was 5.8)
       price: 44349, // Corrected: Starting ~38 Lakh INR -> USD (was 35k USD)
       manufacturer: "MG Motor", // Corrected Manufacturer
+fuelType: 0,
       weight: 2320, // Corrected Kerb Weight (kg, starting 2WD)
       estimatedCabinSpace: 9417491110, // Recalculated: ((1867 - 210) * 2950 * 1926)
       sizeToWeightRatio: 4059263.41, // Recalculated: (9417491110 / 2320)
@@ -1279,6 +1344,7 @@ export const mg = [
       price: 18672, // Kept converted price (16 Lakh INR) as estimate
       capacity: 41000,
       manufacturer: "MG Motor", // Corrected Manufacturer
+fuelType: 3,
       weight: 1495, // Kept provided weight as estimate
       estimatedCabinSpace: 6960518400, // Recalculated: ((1715 - 186) * 2560 * 1760)
       sizeToWeightRatio: 4655865.15, // Recalculated: (6960518400 / 1495)
@@ -1300,6 +1366,7 @@ export const fiat = [ // Note: Fiat has ceased new car sales in India. Data refl
       turnRadius: 5.0, // Corrected Turn Radius (was 5.2)
       price: 5602, // Kept converted price (4.8 Lakh INR) as estimate of last value
       manufacturer: "Fiat",
+fuelType: 0,
       weight: 1130, // Corrected Kerb Weight (kg, approx Diesel)
       estimatedCabinSpace: 5686815100, // Recalculated: ((1525 - 195) * 2510 * 1687)
       sizeToWeightRatio: 5032579.73, // Recalculated: (5686815100 / 1130)
@@ -1319,6 +1386,7 @@ export const fiat = [ // Note: Fiat has ceased new car sales in India. Data refl
       turnRadius: 5.55, // Corrected Turn Radius (was 5.4)
       price: 7002, // Kept converted price (6 Lakh INR) as estimate of last value
       manufacturer: "Fiat",
+fuelType: 0,
       weight: 1210, // Corrected Kerb Weight (kg, approx T-Jet)
       estimatedCabinSpace: 5872187490, // Recalculated: ((1487 - 185) * 2603 * 1730)
       sizeToWeightRatio: 4853047.51, // Recalculated: (5872187490 / 1210)
@@ -1338,6 +1406,7 @@ export const fiat = [ // Note: Fiat has ceased new car sales in India. Data refl
       turnRadius: 4.6, // Corrected Turn Radius (was 5.6)
       price: 17505, // Kept estimated price (15 Lakh INR)
       manufacturer: "Fiat",
+fuelType: 1,
       weight: 980, // Corrected Kerb Weight (kg, approx 1.3 MJD)
       estimatedCabinSpace: 5086203800, // Recalculated: ((1488 - 140) * 2300 * 1627)
       sizeToWeightRatio: 5189998.78, // Recalculated: (5086203800 / 980)
@@ -1357,6 +1426,7 @@ export const fiat = [ // Note: Fiat has ceased new car sales in India. Data refl
       turnRadius: 5.0, // Corrected Turn Radius (was 5.3)
       price: 7586, // Kept converted price (6.5 Lakh INR) as estimate of last value
       manufacturer: "Fiat",
+fuelType: 0,
       weight: 1195, // Corrected Kerb Weight (kg, approx Diesel)
       estimatedCabinSpace: 5895458920, // Recalculated: ((1542 - 205) * 2510 * 1706)
       sizeToWeightRatio: 4933438.43, // Recalculated: (5895458920 / 1195)
@@ -1378,6 +1448,7 @@ export const tata = [
       turnRadius: 5.4, // Estimated
       price: 17505, // Kept estimated price (15 Lakh INR)
       manufacturer: "Tata Motors",
+fuelType: 1,
       weight: 1400, // Kept weight estimate
       estimatedCabinSpace: 6564960000, // Recalculated: ((1630 - 200) * 2600 * 1810)
       sizeToWeightRatio: 4689257.14, // Recalculated: (6564960000 / 1400)
@@ -1398,6 +1469,7 @@ export const tata = [
       price: 16338, // ~14 Lakh INR -> USD
       capacity: [30240, 40200],
       manufacturer: "Tata Motors",
+fuelType: 3,
       weight: 1400, // Kerb weight approx
       estimatedCabinSpace: 6387677184, // Same as Nexon ICE: (1620 - 205) * 2498 * 1804
       sizeToWeightRatio: 4555287.93, // 6387677184 / 1400
@@ -1418,6 +1490,7 @@ export const tata = [
       price: 9919, // ~8.5 Lakh INR -> USD
       capacity: [19200, 24000],
       manufacturer: "Tata Motors",
+fuelType: 3,
       weight: 1015, // Kerb weight approx
       estimatedCabinSpace: 5514350400, // (1535 - 168) * 2400 * 1677
       sizeToWeightRatio: 5432857.54, // 5514350400 / 1015
@@ -1438,6 +1511,7 @@ export const tata = [
       price: 14004, // ~12 Lakh INR -> USD
       capacity: 26000,
       manufacturer: "Tata Motors",
+fuelType: 3,
       weight: 1145, // Kerb weight approx
       estimatedCabinSpace: 5591874450, // (1532 - 170) * 2450 * 1677
       sizeToWeightRatio: 4883733.14, // 5591874450 / 1145
@@ -1458,6 +1532,7 @@ export const tata = [
       price: 12837, // ~11 Lakh INR -> USD
       capacity: [25000, 35000],
       manufacturer: "Tata Motors",
+fuelType: 3,
       weight: 1200, // Kerb weight approx
       estimatedCabinSpace: 6060197490, // (1615 - 190) * 2445 * 1742
       sizeToWeightRatio: 5050164.58, // 6060197490 / 1200
@@ -1478,6 +1553,7 @@ export const tata = [
       price: 21006, // ~18 Lakh INR -> USD
       capacity: [40000, 55000],
       manufacturer: "Tata Motors",
+fuelType: 3,
       weight: 1600, // Kerb weight approx
       estimatedCabinSpace: 6823440000, // (1630 - 190) * 2600 * 1810
       sizeToWeightRatio: 4264650.00, // 6823440000 / 1600
@@ -1497,6 +1573,7 @@ export const tata = [
       turnRadius: 4.0, // Corrected Turn Radius (was 4.5)
       price: 3501, // Kept converted price (3 Lakh INR)
       manufacturer: "Tata Motors", // Corrected Manufacturer
+fuelType: 1,
       weight: 695, // Corrected Kerb Weight (kg, GenX MT)
       estimatedCabinSpace: 4864523080, // Recalculated: ((1652 - 180) * 2230 * 1495)
       sizeToWeightRatio: 7000033.19, // Recalculated: (4864523080 / 695)
@@ -1516,6 +1593,7 @@ export const tata = [
       turnRadius: 5.1, // Corrected Turn Radius (Bolt)
       price: 5252, // Kept converted price (4.5 Lakh INR) as estimate
       manufacturer: "Tata Motors", // Corrected Manufacturer
+fuelType: 1,
       weight: 1095, // Corrected Kerb Weight (kg, Bolt Petrol)
       estimatedCabinSpace: 5698247250, // Recalculated: ((1550 - 165) * 2470 * 1695)
       sizeToWeightRatio: 5203878.77, // Recalculated: (5698247250 / 1095)
@@ -1535,6 +1613,7 @@ export const tata = [
       turnRadius: 5.1, // Corrected Turn Radius (Zest)
       price: 6419, // Kept converted price (5.5 Lakh INR) as estimate
       manufacturer: "Tata Motors", // Corrected Manufacturer
+fuelType: 1,
       weight: 1115, // Corrected Kerb Weight (kg, Zest Petrol)
       estimatedCabinSpace: 5845169100, // Recalculated: ((1570 - 175) * 2470 * 1706)
       sizeToWeightRatio: 5242304.13, // Recalculated: (5845169100 / 1115)
@@ -1554,6 +1633,7 @@ export const tata = [
       turnRadius: 5.8, // Corrected Turn Radius (was 5.6)
       price: 18958, // Corrected: Starting ~16.25 Lakh INR -> USD (was 18k USD)
       manufacturer: "Tata Motors", // Corrected Manufacturer
+fuelType: 0,
       weight: 1825, // Corrected Kerb Weight (kg, starting MT)
       estimatedCabinSpace: 8676889914, // Recalculated: ((1795 - 205) * 2741 * 1922)
       sizeToWeightRatio: 4754460.23, // Recalculated: (8676889914 / 1825)
@@ -1573,6 +1653,7 @@ export const tata = [
       turnRadius: 5.1, // Corrected Turn Radius (was 5.2)
       price: 7352, // Corrected: Starting ~6.3 Lakh INR -> USD (was 6k USD)
       manufacturer: "Tata Motors", // Corrected Manufacturer
+fuelType: 1,
       weight: 1000, // Corrected Kerb Weight (kg, starting Petrol MT)
       estimatedCabinSpace: 5591874450, // Recalculated: ((1532 - 170) * 2450 * 1677)
       sizeToWeightRatio: 5591874.45, // Recalculated: (5591874450 / 1000)
@@ -1592,6 +1673,7 @@ export const tata = [
       turnRadius: 4.9, // 5.1m for EV
       price: 6534, // Corrected: Starting ~5.6 Lakh INR -> USD (was 5.5k USD)
       manufacturer: "Tata Motors", // Corrected Manufacturer
+fuelType: 1,
       weight: 935, // Corrected Kerb Weight (kg, starting Petrol MT)
       estimatedCabinSpace: 5419807200, // Recalculated: ((1535 - 170) * 2400 * 1677)
       sizeToWeightRatio: 5796585.24, // Recalculated: (5419807200 / 935)
@@ -1611,6 +1693,7 @@ export const tata = [
       turnRadius: 5.75, // Corrected Turn Radius (was 5.6)
       price: 17738, // Corrected: Starting ~15.2 Lakh INR -> USD (was 19k USD)
       manufacturer: "Tata Motors", // Corrected Manufacturer
+fuelType: 0,
       weight: 1655, // Corrected Kerb Weight (kg, starting MT)
       estimatedCabinSpace: 8361444278, // Recalculated: ((1718 - 205) * 2741 * 1922)
       sizeToWeightRatio: 5052232.19, // Recalculated: (8361444278 / 1655)
@@ -1630,6 +1713,7 @@ export const tata = [
       turnRadius: 5.1,
       price: 9336, // Corrected: Starting ~8 Lakh INR -> USD
       manufacturer: "Tata Motors", // Corrected Manufacturer
+fuelType: 1,
       weight: 1230, // Corrected Kerb Weight (kg, starting Petrol MT)
       estimatedCabinSpace: 6387677184, // Recalculated: ((1620 - 208) * 2498 * 1804)
       sizeToWeightRatio: 5193233.48, // Recalculated: (6387677184 / 1230)
@@ -1649,6 +1733,7 @@ export const tata = [
       turnRadius: 5.0,
       price: 7702, // Corrected: Starting ~6.6 Lakh INR -> USD (was 7k USD)
       manufacturer: "Tata Motors", // Corrected Manufacturer
+fuelType: 1,
       weight: 1036, // Corrected Kerb Weight (kg, starting NA Petrol MT)
       estimatedCabinSpace: 6134904180, // Recalculated: ((1523 - 165) * 2501 * 1755)
       sizeToWeightRatio: 5921722.18, // Recalculated: (6134904180 / 1036)
@@ -1668,6 +1753,7 @@ export const tata = [
       turnRadius: 4.9, // Corrected Turn Radius (was 5.0)
       price: 7002, // Corrected: Starting ~6 Lakh INR -> USD (was 6.5k USD)
       manufacturer: "Tata Motors", // Corrected Manufacturer
+fuelType: 1,
       weight: 1000, // Approx Kerb Weight (kg, Petrol MT)
       estimatedCabinSpace: 6060197490, // Recalculated: ((1615 - 187) * 2445 * 1742)
       sizeToWeightRatio: 6060197.49, // Recalculated: (6060197490 / 1000)
@@ -1689,6 +1775,7 @@ export const toyota = [
         turnRadius: 5.9, // Corrected Turn Radius (was 5.6)
         price: 22769, // Corrected: Starting ~19.5 Lakh INR -> USD (was 34k USD)
         manufacturer: "Toyota",
+fuelType: 2,
         weight: 1595, // Corrected Kerb Weight (kg, starting Petrol G-FLT)
         estimatedCabinSpace: 8388242250, // Recalculated: ((1790 - 185) * 2850 * 1845)
         sizeToWeightRatio: 5259086.05, // Recalculated: (8388242250 / 1595)
@@ -1708,6 +1795,7 @@ export const toyota = [
         turnRadius: 5.1, // Corrected Turn Radius (was 5.2)
         price: 10503, // Corrected: Assumed Starting ~9 Lakh INR -> USD (was 15k USD)
         manufacturer: "Toyota",
+fuelType: 1,
         weight: 1090, // Corrected Kerb Weight (kg, starting MT)
         estimatedCabinSpace: 5809575000, // Recalculated: ((1495 - 175) * 2550 * 1730)
         sizeToWeightRatio: 5329885.32, // Recalculated: (5809575000 / 1090)
@@ -1727,6 +1815,7 @@ export const toyota = [
       turnRadius: 4.85, // Corrected Turn Radius (was 4.8)
       price: 7819, // Corrected: Starting ~6.7 Lakh INR -> USD (was 7k USD)
       manufacturer: "Toyota",
+fuelType: 1,
       weight: 920, // Corrected Kerb Weight (kg, starting MT)
       estimatedCabinSpace: 5840118000, // Recalculated: ((1500 - 170) * 2520 * 1745)
       sizeToWeightRatio: 6347954.35, // Recalculated: (5840118000 / 920)
@@ -1746,6 +1835,7 @@ export const toyota = [
       turnRadius: 5.2,
       price: 9919, // Kept converted price (8.5 Lakh INR)
       manufacturer: "Toyota",
+fuelType: 1,
       weight: 1110, // Corrected Kerb Weight (kg, starting MT)
       estimatedCabinSpace: 6453900000, // Recalculated: ((1640 - 198) * 2500 * 1790)
       sizeToWeightRatio: 5814324.32, // Recalculated: (6453900000 / 1110)
@@ -1766,6 +1856,7 @@ export const toyota = [
         turnRadius: 5.4, // Corrected Turn Radius
         price: 12837, // Corrected: Starting ~11 Lakh INR -> USD
         manufacturer: "Toyota",
+fuelType: 2,
         weight: 1155, // Corrected Kerb Weight (kg, starting Mild Hybrid MT)
         estimatedCabinSpace: 6688115000, // Recalculated: ((1645 - 210) * 2600 * 1795) - Same dimensions as Grand Vitara
         sizeToWeightRatio: 5790575.76, // Recalculated: (6688115000 / 1155)
@@ -1785,6 +1876,7 @@ export const toyota = [
       turnRadius: 5.4, // Corrected Turn Radius (was 5.6)
       price: 23340, // Corrected: Starting ~20 Lakh INR -> USD
       manufacturer: "Toyota",
+fuelType: 0,
       weight: 1840, // Corrected Kerb Weight (kg, current G MT)
       estimatedCabinSpace: 8192662500, // Recalculated: ((1795 - 178) * 2750 * 1830)
       sizeToWeightRatio: 4452533.97, // Recalculated: (8192662500 / 1840)
@@ -1804,6 +1896,7 @@ export const toyota = [
       turnRadius: 5.8, // Corrected Turn Radius (was 5.9)
       price: 38889, // Corrected: Starting ~33.3 Lakh INR -> USD (was 30k USD)
       manufacturer: "Toyota",
+fuelType: 0,
       weight: 1895, // Corrected Kerb Weight (kg, starting Petrol MT)
       estimatedCabinSpace: 8217169125, // Recalculated: ((1835 - 220) * 2745 * 1855)
       sizeToWeightRatio: 4336236.97, // Recalculated: (8217169125 / 1895)
@@ -1823,6 +1916,7 @@ export const toyota = [
       turnRadius: 5.8,
       price: 53682, // Corrected: Approx 46 Lakh INR -> USD (was 25k USD)
       manufacturer: "Toyota",
+fuelType: 2,
       weight: 1665, // Corrected Kerb Weight (kg)
       estimatedCabinSpace: 6673958000, // Recalculated: ((1455 - 160) * 2825 * 1840)
       sizeToWeightRatio: 4008383.18, // Recalculated: (6673958000 / 1665)
@@ -1843,6 +1937,7 @@ export const toyota = [
         turnRadius: 6.4, // Corrected Turn Radius
         price: 35578, // Corrected: Starting ~30.5 Lakh INR -> USD
         manufacturer: "Toyota",
+fuelType: 0,
         weight: 2075, // Corrected Kerb Weight (kg, starting MT)
         estimatedCabinSpace: 9133747525, // Recalculated: ((1815 - 216) * 3085 * 1855)
         sizeToWeightRatio: 4401805.96, // Recalculated: (9133747525 / 2075)
@@ -1864,6 +1959,7 @@ export const kia = [
         turnRadius: 5.6, // Corrected Turn Radius (was 5.7)
         price: 39678, // Corrected: Approx last price ~34 Lakh INR -> USD (was 30k USD)
         manufacturer: "Kia",
+fuelType: 0,
         weight: 2090, // Corrected Kerb Weight (kg, starting Prestige)
         estimatedCabinSpace: 9665860500, // Recalculated: ((1755 - 180) * 3060 * 1985)
         sizeToWeightRatio: 4624813.64, // Recalculated: (9665860500 / 2090)
@@ -1885,6 +1981,7 @@ export const kia = [
         price: 70020, // Corrected: Starting ~60 Lakh INR -> USD
         capacity: 77400,
         manufacturer: "Kia",
+fuelType: 3,
         weight: 1985, // Corrected Kerb Weight (kg, RWD)
         estimatedCabinSpace: 7294987500, // Recalculated: ((1550 - 155) * 2900 * 1890)
         sizeToWeightRatio: 3675056.68, // Recalculated: (7294987500 / 1985)
@@ -1904,6 +2001,7 @@ export const kia = [
       turnRadius: 5.3,
       price: 12254, // Corrected: Starting ~10.5 Lakh INR -> USD (was 13k USD)
       manufacturer: "Kia",
+fuelType: 1,
       weight: 1221, // Corrected Kerb Weight (kg, starting NA Petrol MT)
       estimatedCabinSpace: 6816015000, // Recalculated: ((1645 - 190) * 2610 * 1800)
       sizeToWeightRatio: 5582321.87, // Recalculated: (6816015000 / 1221)
@@ -1923,6 +2021,7 @@ export const kia = [
       turnRadius: 5.1, // Corrected Turn Radius (was 5.3)
       price: 9336, // Corrected: Starting ~8 Lakh INR -> USD (was 10k USD)
       manufacturer: "Kia",
+fuelType: 1,
       weight: 1055, // Corrected Kerb Weight (kg, starting NA Petrol MT)
       estimatedCabinSpace: 6386887500, // Recalculated: ((1642 - 205) * 2500 * 1790)
       sizeToWeightRatio: 6053921.80, // Recalculated: (6386887500 / 1055)
@@ -1942,6 +2041,7 @@ export const kia = [
       turnRadius: 5.5, // Corrected Turn Radius (was 5.3)
       price: 12140, // Corrected: Starting ~10.4 Lakh INR -> USD (was 15k USD)
       manufacturer: "Kia",
+fuelType: 1,
       weight: 1280, // Corrected Kerb Weight (kg, starting NA Petrol MT)
       estimatedCabinSpace: 7606872000, // Recalculated: ((1708 - 195) * 2780 * 1800)
       sizeToWeightRatio: 5942868.75, // Recalculated: (7606872000 / 1280)
@@ -1964,6 +2064,7 @@ export const mahindra = [
     price: 18490, // Approx ₹15.49 Lakh INR -> USD (lowest ex-showroom)[](mahindra/xuv400-ev/specs)
     capacity: [34500, 39400],
     manufacturer: "Mahindra",
+fuelType: 3,
     weight: 1600, // kg (estimated for compact electric SUV)
     estimatedCabinSpace: 8930212290, // (1634 - 180) * 2445 * 1821
     sizeToWeightRatio: 5581382.68, // 8930212290 / 1600
@@ -1984,6 +2085,7 @@ export const mahindra = [
     price: 22550, // Approx ₹18.90 Lakh INR -> USD (lowest ex-showroom)[](ev-brand/mahindra)
     capacity: [59000, 79000],
     manufacturer: "Mahindra",
+fuelType: 3,
     weight: 1900, // kg (estimated for compact electric SUV)
     estimatedCabinSpace: 11032492935, // (1649 - 190) * 2775 * 1907
     sizeToWeightRatio: 5806575.44, // 11032492935 / 1900
@@ -2004,6 +2106,7 @@ export const mahindra = [
     price: 26110, // Approx ₹21.90 Lakh INR -> USD (lowest ex-showroom)[](ev-brand/mahindra)[](mahindra-cars/xev-9e/)
     capacity: [59000, 79000],
     manufacturer: "Mahindra",
+fuelType: 3,
     weight: 2200, // kg (estimated for mid-size electric SUV)
     estimatedCabinSpace: 12219041835, // (1694 - 207) * 2775 * 1907
     sizeToWeightRatio: 5554109.93, // 12219041835 / 2200
@@ -2023,6 +2126,7 @@ export const mahindra = [
         turnRadius: 5.5, // Corrected Turn Radius (was 5.6)
         price: 37344, // Corrected: Approx last price ~32 Lakh INR -> USD (was 35k USD)
         manufacturer: "Mahindra",
+fuelType: 0,
         weight: 2155, // Corrected Kerb Weight (kg, 2WD)
         estimatedCabinSpace: 9120894000, // Recalculated: ((1845 - 244) * 2865 * 1960)
         sizeToWeightRatio: 4232433.41, // Recalculated: (9120894000 / 2155)
@@ -2043,6 +2147,7 @@ export const mahindra = [
         price: 11670, // Kept estimated price (10 Lakh INR)
         capacity: 21200,
         manufacturer: "Mahindra Electric",
+fuelType: 3,
         weight: 1265, // Corrected Kerb Weight (kg, D6 variant)
         estimatedCabinSpace: 6275184120, // Recalculated: ((1540 - 172) * 2630 * 1740)
         sizeToWeightRatio: 4960619.86, // Recalculated: (6275184120 / 1265)
@@ -2062,6 +2167,7 @@ export const mahindra = [
       turnRadius: 5.8, // Corrected Turn Radius (was 5.4)
       price: 16338, // Corrected: Starting ~14 Lakh INR -> USD (was 20k USD)
       manufacturer: "Mahindra",
+fuelType: 0,
       weight: 1650, // Approx Kerb Weight (kg, Petrol MT 5-str)
       estimatedCabinSpace: 8090718750, // Recalculated: ((1755 - 200) * 2750 * 1890)
       sizeToWeightRatio: 4903465.91, // Recalculated: (8090718750 / 1650)
@@ -2081,6 +2187,7 @@ export const mahindra = [
       turnRadius: 5.8, // Corrected Turn Radius (was 5.6)
       price: 12954, // Corrected: Starting ~11.1 Lakh INR (RWD) -> USD (was 15k USD)
       manufacturer: "Mahindra",
+fuelType: 0,
       weight: 1720, // Corrected Kerb Weight (kg, approx 4WD Diesel MT HT)
       estimatedCabinSpace: 7321709500, // Recalculated: ((1850 - 226) * 2450 * 1820)
       sizeToWeightRatio: 4256807.85, // Recalculated: (7321709500 / 1720)
@@ -2100,6 +2207,7 @@ export const mahindra = [
       turnRadius: 5.65, // Corrected Turn Radius (was 5.4)
       price: 15900, // Corrected: Starting ~13.6 Lakh INR -> USD (was 18k USD)
       manufacturer: "Mahindra",
+fuelType: 0,
       weight: 1880, // Corrected Kerb Weight (kg, approx Z2 Diesel MT)
       estimatedCabinSpace: 8825183550, // Recalculated: ((1857 - 187) * 2750 * 1917)
       sizeToWeightRatio: 4694246.57, // Recalculated: (8825183550 / 1880)
@@ -2119,6 +2227,7 @@ export const mahindra = [
       turnRadius: 5.3, // Corrected Turn Radius (was 5.4)
       price: 8753, // Corrected: Starting ~7.5 Lakh INR (XUV 3XO) -> USD (was 12k USD)
       manufacturer: "Mahindra",
+fuelType: 1,
       weight: 1250, // Corrected Kerb Weight (kg, approx starting Petrol MT)
       estimatedCabinSpace: 6906440820, // Recalculated: ((1647 - 201) * 2600 * 1821)
       sizeToWeightRatio: 5525152.66, // Recalculated: (6906440820 / 1250)
@@ -2138,6 +2247,7 @@ export const mahindra = [
       turnRadius: 5.6, // Corrected Turn Radius (was 5.4)
       price: 18672, // Kept converted price (16 Lakh INR) as estimate of last value
       manufacturer: "Mahindra",
+fuelType: 0,
       weight: 1785, // Corrected Kerb Weight (kg, approx W5 MT)
       estimatedCabinSpace: 8120895000, // Recalculated: ((1785 - 200) * 2700 * 1890)
       sizeToWeightRatio: 4549520.99, // Recalculated: (8120895000 / 1785)
@@ -2158,6 +2268,7 @@ export const mahindra = [
       turnRadius: 5.35,
       price: 11087, // Corrected: Starting ~9.5 Lakh INR -> USD
       manufacturer: "Mahindra",
+fuelType: 0,
       weight: 1575, // Corrected Kerb Weight (kg, approx N4)
       estimatedCabinSpace: 7958226800, // Recalculated: ((1817 - 160) * 2680 * 1795)
       sizeToWeightRatio: 5052842.41, // Recalculated: (7958226800 / 1575)
@@ -2179,6 +2290,7 @@ export const volkswagen = [
       turnRadius: 5.25, // Corrected Turn Radius (was 5.4)
       price: 13420, // Corrected: Starting ~11.5 Lakh INR -> USD (was 14k USD)
       manufacturer: "Volkswagen",
+fuelType: 1,
       weight: 1185, // Corrected Kerb Weight (kg, starting 1.0 MT)
       estimatedCabinSpace: 6169958112, // Recalculated: ((1507 - 179) * 2651 * 1752)
       sizeToWeightRatio: 5206715.71, // Recalculated: (6169958112 / 1185)
@@ -2198,6 +2310,7 @@ export const volkswagen = [
       turnRadius: 5.05, // Corrected Turn Radius (was 5.4)
       price: 13537, // Corrected: Starting ~11.6 Lakh INR -> USD (was 12k USD)
       manufacturer: "Volkswagen",
+fuelType: 1,
       weight: 1185, // Corrected Kerb Weight (kg, starting 1.0 MT)
       estimatedCabinSpace: 6646078560, // Recalculated: ((1612 - 188) * 2651 * 1760)
       sizeToWeightRatio: 5608505.12, // Recalculated: (6646078560 / 1185)
@@ -2217,6 +2330,7 @@ export const volkswagen = [
       turnRadius: 5.75, // Corrected Turn Radius (was 5.5)
       price: 40845, // Kept corrected price (35 Lakh INR)
       manufacturer: "Volkswagen",
+fuelType: 1,
       weight: 1703, // Corrected Kerb Weight (kg)
       estimatedCabinSpace: 7225323495, // Recalculated: ((1675 - 190) * 2679 * 1839)
       sizeToWeightRatio: 4242697.26, // Recalculated: (7225323495 / 1703)
@@ -2236,6 +2350,7 @@ export const volkswagen = [
       turnRadius: 4.97,
       price: 7586, // Corrected: Assumed Starting ~6.5 Lakh INR -> USD (was 10.5k USD)
       manufacturer: "Volkswagen",
+fuelType: 1,
       weight: 1015, // Corrected Kerb Weight (kg, starting NA MT)
       estimatedCabinSpace: 5407430940, // Recalculated: ((1469 - 165) * 2470 * 1682)
       sizeToWeightRatio: 5327518.17, // Recalculated: (5407430940 / 1015)
@@ -2255,6 +2370,7 @@ export const volkswagen = [
       turnRadius: 5.4,
       price: 11670, // Kept converted price (10 Lakh INR)
       manufacturer: "Volkswagen",
+fuelType: 1,
       weight: 1140, // Corrected Kerb Weight (kg, starting NA MT)
       estimatedCabinSpace: 5662992474, // Recalculated: ((1467 - 163) * 2553 * 1699)
       sizeToWeightRatio: 4967537.26, // Recalculated: (5662992474 / 1140)
@@ -2276,6 +2392,7 @@ export const volkswagen = [
       price: 64185, // Estimated: ~55 Lakh INR -> USD
       capacity: 77000,
       manufacturer: "Volkswagen",
+fuelType: 3,
       weight: 2120, // Estimated Kerb Weight (kg, Pro)
       estimatedCabinSpace: 7429872970, // Recalculated: ((1631 - 163) * 2771 * 1852)
       sizeToWeightRatio: 3504657.06, // Recalculated: (7429872970 / 2120)
@@ -2297,6 +2414,7 @@ export const citroen=[
     turnRadius: 4.98, // Corrected Turn Radius (was 5.1)
     price: 7119, // Corrected: Starting ~6.1 Lakh INR -> USD (was 7k USD)
     manufacturer: "Citroën",
+fuelType: 1,
     weight: 939, // Corrected Kerb Weight (kg, starting NA MT)
     estimatedCabinSpace: 6268378992, // Recalculated: ((1604 - 180) * 2540 * 1733)
     sizeToWeightRatio: 6675590.00, // Recalculated: (6268378992 / 939)
@@ -2317,6 +2435,7 @@ export const citroen=[
     turnRadius: 5.4, // Corrected Turn Radius
     price: 11670, // Corrected: Starting ~10 Lakh INR -> USD
     manufacturer: "Citroën",
+fuelType: 1,
     weight: 1237, // Corrected Kerb Weight (kg, starting MT 5-str)
     estimatedCabinSpace: 6990860868, // Recalculated: ((1669 - 200) * 2671 * 1796)
     sizeToWeightRatio: 5651463.92, // Recalculated: (6990860868 / 1237)
@@ -2336,6 +2455,7 @@ export const citroen=[
     turnRadius: 5.35, // Corrected Turn Radius (was 5.5)
     price: 43179, // Kept corrected price (37 Lakh INR)
     manufacturer: "Citroën",
+fuelType: 0,
     weight: 1570, // Corrected Kerb Weight (kg)
     estimatedCabinSpace: 7977144000, // Recalculated: ((1710 - 230) * 2730 * 1969)
     sizeToWeightRatio: 5080983.44, // Recalculated: (7977144000 / 1570)
@@ -2356,6 +2476,7 @@ export const bmw=[ // Already corrected, minor review
     turnRadius: 5.85, // Corrected (based on 11.7m diameter)
     price: 57767, // Starting Petrol USD
     manufacturer: "BMW",
+fuelType: 1,
     weight: 1560, // Petrol Kerb Weight (kg)
     estimatedCabinSpace: 7187504940, // Kept calculation
     sizeToWeightRatio: 4607374.96, // Kept calculation
@@ -2375,6 +2496,7 @@ export const bmw=[ // Already corrected, minor review
     turnRadius: 6.0,
     price: 70720, // Starting Petrol USD
     manufacturer: "BMW",
+fuelType: 1,
     weight: 1615, // Petrol Kerb Weight (kg)
     estimatedCabinSpace: 7070388162, // Kept calculation
     sizeToWeightRatio: 4377949.32, // Kept calculation
@@ -2394,6 +2516,7 @@ export const bmw=[ // Already corrected, minor review
     turnRadius: 6.15, // (Base, can be lower with Integral Active Steering)
     price: 207726, // Starting Petrol USD
     manufacturer: "BMW",
+fuelType: 1,
     weight: 2090, // Petrol Kerb Weight (kg)
     estimatedCabinSpace: 8701297500, // Recalculated: ((1544 - 147) * 3215 * 1950)
     sizeToWeightRatio: 4163299.95, // Recalculated: (8701297500 / 2090)
@@ -2414,6 +2537,7 @@ export const bmw=[ // Already corrected, minor review
     price: 162807, // Starting xDrive50 USD
     capacity: 106300,
     manufacturer: "BMW",
+fuelType: 3,
     weight: 2585, // Corrected Kerb Weight (kg)
     estimatedCabinSpace: 8857413000, // Recalculated: ((1696 - 195) * 3000 * 1967)
     sizeToWeightRatio: 3426465.38, // Recalculated: (8857413000 / 2585)
@@ -2435,6 +2559,7 @@ export const bmw=[ // Already corrected, minor review
     price: 87525, // Corrected: Starting ~75 Lakh INR -> USD
     capacity: 80700,
     manufacturer: "BMW",
+fuelType: 3,
     weight: 2125, // Kerb Weight (kg)
     estimatedCabinSpace: 6802966886, // Recalculated: ((1448 - 125) * 2856 * 1852)
     sizeToWeightRatio: 3201396.18, // Recalculated: (6802966886 / 2125)
@@ -2456,6 +2581,7 @@ export const jeep=[
     turnRadius: 5.8,
     price: 38889, // Corrected: Starting ~33.3 Lakh INR -> USD (was 33k USD)
     manufacturer: "Jeep",
+fuelType: 0,
     weight: 1813, // Corrected Kerb Weight (kg, starting Limited MT FWD)
     estimatedCabinSpace: 7843117084, // Recalculated: ((1698 - 214) * 2782 * 1859)
     sizeToWeightRatio: 4325988.46, // Recalculated: (7843117084 / 1813)
@@ -2475,6 +2601,7 @@ export const jeep=[
     turnRadius: 5.7, // Corrected Turn Radius (was 5.5)
     price: 23926, // Corrected: Starting ~20.5 Lakh INR -> USD (was 25k USD)
     manufacturer: "Jeep",
+fuelType: 0,
     weight: 1590, // Corrected Kerb Weight (kg, starting Sport MT Diesel)
     estimatedCabinSpace: 6913143168, // Recalculated: ((1640 - 198) * 2636 * 1818)
     sizeToWeightRatio: 4347888.79, // Recalculated: (6913143168 / 1590)
@@ -2495,6 +2622,7 @@ export const jeep=[
     turnRadius: 6.2, // Corrected (Unlimited)
     price: 75855, // Corrected: Starting ~65 Lakh INR -> USD
     manufacturer: "Jeep",
+fuelType: 1,
     weight: 2045, // Corrected Kerb Weight (kg, Unlimited)
     estimatedCabinSpace: 9224201864, // Recalculated: ((1853 - 223) * 3008 * 1894)
     sizeToWeightRatio: 4510612.16, // Recalculated: (9224201864 / 2045)
@@ -2517,6 +2645,7 @@ export const volvo=[
     price: 65340, // Corrected: Starting ~56 Lakh INR -> USD (was 34k USD)
     capacity: [67000, 75000],
     manufacturer: "Volvo",
+fuelType: 3,
     weight: 2030, // Corrected Kerb Weight (kg, Single Motor)
     estimatedCabinSpace: 7444769178, // Recalculated: ((1651 - 175) * 2702 * 1863)
     sizeToWeightRatio: 3667373.98, // Recalculated: (7444769178 / 2030)
@@ -2537,6 +2666,7 @@ export const volvo=[
     turnRadius: 5.85, // Corrected (based on 11.7m diameter)
     price: 78189, // Corrected: Starting ~67 Lakh INR -> USD
     manufacturer: "Volvo",
+fuelType: 1,
     weight: 1875, // Corrected Kerb Weight (kg)
     estimatedCabinSpace: 7335832770, // Recalculated: ((1653 - 211) * 2865 * 1902)
     sizeToWeightRatio: 3912444.14, // Recalculated: (7335832770 / 1875)
@@ -2557,6 +2687,7 @@ export const volvo=[
     turnRadius: 6.0, // Corrected (based on 12m diameter)
     price: 117819, // Corrected: Starting ~1 Cr INR -> USD
     manufacturer: "Volvo",
+fuelType: 1,
     weight: 2095, // Corrected Kerb Weight (kg)
     estimatedCabinSpace: 8811935539, // Recalculated: ((1771 - 223) * 2984 * 1923)
     sizeToWeightRatio: 4206174.48, // Recalculated: (8811935539 / 2095)
@@ -2578,6 +2709,7 @@ export const volvo=[
     price: 73515, // Corrected: Starting ~62.9 Lakh INR -> USD
     capacity: [67000, 75000],
     manufacturer: "Volvo",
+fuelType: 3,
     weight: 2045, // Corrected Kerb Weight (kg, Single Motor)
     estimatedCabinSpace: 7166204638, // Recalculated: ((1591 - 171) * 2702 * 1873)
     sizeToWeightRatio: 3504256.55, // Recalculated: (7166204638 / 2045)

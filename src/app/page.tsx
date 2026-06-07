@@ -73,6 +73,7 @@ export type CarData = {
   estimatedCabinSpace: number
   sizeToWeightRatio: number
   dragCoefficient: number
+  fuelType: number
 }
 
 function getComparableValue(value: number | number[] | undefined): number {
@@ -394,6 +395,7 @@ export default function VehicleDimensions() {
     | "capacity"
   >("name")
   const [sortOrder, setSortOrder] = useState<"asc" | "desc">("asc")
+  const [fuelFilter, setFuelFilter] = useState<number | "All">("All")
   const [manufacturerFilter, setManufacturerFilter] = useState<string>("All")
   const [comparisons, setComparisons] = useState<{ field: keyof CarData; operator: ">" | "<" }[]>([])
   const [showDimensionsRange, setShowDimensionsRange] = useState(true)
@@ -490,6 +492,7 @@ export default function VehicleDimensions() {
         if (starredCars && starredCars?.includes(item.name)) return true
         if (pinnedCar && item.name === pinnedCar.name) return true
         if (manufacturerFilter !== "All" && item.manufacturer !== manufacturerFilter) return false
+        if (fuelFilter !== "All" && item.fuelType !== fuelFilter) return false
 
         return comparisons.every((comparison) => {
           if (pinnedCar) {
@@ -600,6 +603,17 @@ export default function VehicleDimensions() {
                     {m}
                   </option>
                 ))}
+              </select>
+              <select
+                className="px-2 py-1 border rounded-md"
+                value={fuelFilter}
+                onChange={(e) => setFuelFilter(e.target.value === "All" ? "All" : Number(e.target.value))}
+              >
+                <option value="All">All Fuel Types</option>
+                <option value={0}>Diesel</option>
+                <option value={1}>Petrol</option>
+                <option value={2}>Hybrid</option>
+                <option value={3}>EV</option>
               </select>
               <select
                 className="px-2 py-1 border rounded-md"
