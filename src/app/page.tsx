@@ -74,10 +74,12 @@ export type CarData = {
   sizeToWeightRatio: number
   dragCoefficient: number
   fuelType: number
+  priceInr?: number
 }
 
-function getComparableValue(value: number | number[] | undefined): number {
+function getComparableValue(value: number | number[] | undefined, selectedValue?: number): number {
   if (value === undefined) return 0
+  if (Array.isArray(value) && selectedValue !== undefined) return selectedValue
   return Array.isArray(value) ? Math.max(...value) : value
 }
 
@@ -144,14 +146,18 @@ type carcardprops = {
   setPinnedCar: React.Dispatch<React.SetStateAction<CarData | null>>,
   starredCars: string[]|null,
   starcar: React.Dispatch<React.SetStateAction<string[]|null>>,
+  selectedVariants: Record<string, { power?: number; torque?: number; capacity?: number }>,
+  onSelectVariant: (carName: string, field: "power" | "torque" | "capacity", value: number) => void,
 }
 // eslint-disable-next-line react/display-name
-const CarCard = memo(({ item, pinnedCar, setPinnedCar, starredCars, starcar }:carcardprops) => {
+const CarCard = memo(({ item, pinnedCar, setPinnedCar, starredCars, starcar, selectedVariants, onSelectVariant }:carcardprops) => {
   // Move the percentage calculation inside the memoized component
   const calculatePercentage = useCallback((value: number, reference: number) => {
     if (!reference) return 0
     return Math.round(((value - reference) / reference) * 100)
   }, [])
+
+  const getSelected = useCallback((field: "power" | "torque" | "capacity") => selectedVariants[item.name]?.[field] ?? undefined, [item.name, selectedVariants])
 
   return (
     <Card
@@ -201,25 +207,76 @@ const CarCard = memo(({ item, pinnedCar, setPinnedCar, starredCars, starcar }:ca
             </Badge>
           )}
         </p>
+        {item.priceInr && (
+          <p>
+            Price (₹): {item.priceInr.toLocaleString("en-IN")}
+            {pinnedCar && pinnedCar.name !== item.name && pinnedCar.priceInr && (
+              <Badge
+                className={`ml-2 ${calculatePercentage(item.priceInr, pinnedCar.priceInr) > 0 ? "bg-red-100 text-red-800" : "bg-green-100 text-green-800"}`}
+              >
+                {calculatePercentage(item.priceInr, pinnedCar.priceInr) > 0 ? "+" : ""}
+                {calculatePercentage(item.priceInr, pinnedCar.priceInr)}%
+              </Badge>
+            )}
+          </p>
+        )}
         <p className="flex items-center gap-1">
           Power: {formatValue(item.power)} bhp
+          {Array.isArray(item.power) && (
+            <span className="flex gap-1 ml-1">
+              {(item.power as number[]).map((v) => (
+                <button
+                  key={v}
+                  onClick={() => onSelectVariant(item.name, "power", v)}
+                  className={`px-1.5 py-0.5 text-xs border rounded ${
+                    getSelected("power") === v
+                      ? "bg-primary text-primary-foreground border-primary"
+                      : getSelected("power") === undefined && v === Math.max(...(item.power as number[]))
+                        ? "bg-muted border-primary/50"
+                        : "bg-background border-muted-foreground/30"
+                  }`}
+                >
+                  {v}
+                </button>
+              ))}
+            </span>
+          )}
           {pinnedCar && pinnedCar.name !== item.name && (
             <Badge
-              className={`ml-2 ${getComparableValue(item.power) > getComparableValue(pinnedCar.power) ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"}`}
+              className={`ml-2 ${getComparableValue(item.power, getSelected("power")) > getComparableValue(pinnedCar.power, selectedVariants[pinnedCar.name]?.power) ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"}`}
             >
-              {calculatePercentage(getComparableValue(item.power), getComparableValue(pinnedCar.power)) > 0 ? "+" : ""}
-              {calculatePercentage(getComparableValue(item.power), getComparableValue(pinnedCar.power))}%
+              {calculatePercentage(getComparableValue(item.power, getSelected("power")), getComparableValue(pinnedCar.power, selectedVariants[pinnedCar.name]?.power)) > 0 ? "+" : ""}
+              {calculatePercentage(getComparableValue(item.power, getSelected("power")), getComparableValue(pinnedCar.power, selectedVariants[pinnedCar.name]?.power))}%
             </Badge>
           )}
         </p>
         <p className="flex items-center gap-1">
           Torque: {formatValue(item.torque)} Nm
+          {Array.isArray(item.torque) && (
+            <span className="flex gap-1 ml-1">
+              {(item.torque as number[]).map((v) => (
+                <button
+                  key={v}
+                  onClick={() => onSelectVariant(item.name, "torque", v)}
+                  className={`px-1.5 py-0.5 text-xs border rounded ${
+                    getSelected("torque") === v
+                      ? "bg-primary text-primary-foreground border-primary"
+                      : getSelected("torque") === undefined && v === Math.max(...(item.torque as number[]))
+                        ? "bg-muted border-primary/50"
+                        : "bg-background border-muted-foreground/30"
+                  }`}
+                >
+                  {v}
+                </button>
+              ))}
+            </span>
+          )}
           {pinnedCar && pinnedCar.name !== item.name && (
             <Badge
-              className={`ml-2 ${getComparableValue(item.torque) > getComparableValue(pinnedCar.torque) ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"}`}
+              className={`ml-2 ${getComparableValue(item.torque, getSelected("torque")) > getComparableValue(pinnedCar.torque, selectedVariants[pinnedCar.name]?.torque) ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"}`}
             >
-              {calculatePercentage(getComparableValue(item.torque), getComparableValue(pinnedCar.torque)) > 0 ? "+" : ""}
-              {calculatePercentage(getComparableValue(item.torque), getComparableValue(pinnedCar.torque))}%
+              {calculatePercentage(getComparableValue(item.torque, getSelected("torque")), getComparableValue(pinnedCar.torque, selectedVariants[pinnedCar.name]?.torque)) > 0 ? "+" : ""}
+              {calculatePercentage(getComparableValue(item.torque, getSelected("torque")), getComparableValue(pinnedCar.torque, selectedVariants[pinnedCar.name]?.torque))}%
             </Badge>
           )}
         </p>
@@ -303,12 +360,31 @@ const CarCard = memo(({ item, pinnedCar, setPinnedCar, starredCars, starcar }:ca
         </p>
         <p className="flex items-center gap-1">
           Capacity: {formatCapacity(item.capacity)}
+          {Array.isArray(item.capacity) && (
+            <span className="flex gap-1 ml-1">
+              {(item.capacity as number[]).map((v) => (
+                <button
+                  key={v}
+                  onClick={() => onSelectVariant(item.name, "capacity", v)}
+                  className={`px-1.5 py-0.5 text-xs border rounded ${
+                    getSelected("capacity") === v
+                      ? "bg-primary text-primary-foreground border-primary"
+                      : getSelected("capacity") === undefined && v === Math.max(...(item.capacity as number[]))
+                        ? "bg-muted border-primary/50"
+                        : "bg-background border-muted-foreground/30"
+                  }`}
+                >
+                  {(v / 1000).toFixed(v % 1000 === 0 ? 0 : 1)}
+                </button>
+              ))}
+            </span>
+          )}
           {pinnedCar && pinnedCar.name !== item.name && (
             <Badge
-              className={`ml-2 ${getComparableValue(item.capacity) > getComparableValue(pinnedCar.capacity) ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"}`}
+              className={`ml-2 ${getComparableValue(item.capacity, getSelected("capacity")) > getComparableValue(pinnedCar.capacity, selectedVariants[pinnedCar.name]?.capacity) ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"}`}
             >
-              {calculatePercentage(getComparableValue(item.capacity), getComparableValue(pinnedCar.capacity)) > 0 ? "+" : ""}
-              {calculatePercentage(getComparableValue(item.capacity), getComparableValue(pinnedCar.capacity))}%
+              {calculatePercentage(getComparableValue(item.capacity, getSelected("capacity")), getComparableValue(pinnedCar.capacity, selectedVariants[pinnedCar.name]?.capacity)) > 0 ? "+" : ""}
+              {calculatePercentage(getComparableValue(item.capacity, getSelected("capacity")), getComparableValue(pinnedCar.capacity, selectedVariants[pinnedCar.name]?.capacity))}%
             </Badge>
           )}
         </p>
@@ -393,12 +469,21 @@ export default function VehicleDimensions() {
     | "power"
     | "torque"
     | "capacity"
+    | "priceInr"
   >("name")
   const [sortOrder, setSortOrder] = useState<"asc" | "desc">("asc")
   const [fuelFilter, setFuelFilter] = useState<number | "All">("All")
   const [manufacturerFilter, setManufacturerFilter] = useState<string>("All")
   const [comparisons, setComparisons] = useState<{ field: keyof CarData; operator: ">" | "<" }[]>([])
+  const [selectedVariants, setSelectedVariants] = useState<Record<string, { power?: number; torque?: number; capacity?: number }>>({})
   const [showDimensionsRange, setShowDimensionsRange] = useState(true)
+
+  const selectVariant = useCallback((carName: string, field: "power" | "torque" | "capacity", value: number) => {
+    setSelectedVariants(prev => ({
+      ...prev,
+      [carName]: { ...prev[carName], [field]: value }
+    }))
+  }, [])
 
   // 6. Memoize the combined data array to prevent recreation on every render
   const data = useMemo(
@@ -482,10 +567,10 @@ export default function VehicleDimensions() {
           item.turnRadius > dimensions.turnRadius[0] &&
           item.groundClearance < dimensions.groundClearence[1] &&
           item.groundClearance > dimensions.groundClearence[0] &&
-          getComparableValue(item.power) < dimensions.power[1] &&
-          getComparableValue(item.power) > dimensions.power[0] &&
-          (item.torque === undefined || (getComparableValue(item.torque) < dimensions.torque[1] && getComparableValue(item.torque) > dimensions.torque[0])) &&
-          (item.capacity === undefined || (getComparableValue(item.capacity) < dimensions.capacity[1] && getComparableValue(item.capacity) > dimensions.capacity[0]))
+          getComparableValue(item.power, selectedVariants[item.name]?.power) < dimensions.power[1] &&
+          getComparableValue(item.power, selectedVariants[item.name]?.power) > dimensions.power[0] &&
+          (item.torque === undefined || (getComparableValue(item.torque, selectedVariants[item.name]?.torque) < dimensions.torque[1] && getComparableValue(item.torque, selectedVariants[item.name]?.torque) > dimensions.torque[0])) &&
+          (item.capacity === undefined || (getComparableValue(item.capacity, selectedVariants[item.name]?.capacity) < dimensions.capacity[1] && getComparableValue(item.capacity, selectedVariants[item.name]?.capacity) > dimensions.capacity[0]))
         )
       })
       .filter((item) => {
@@ -496,8 +581,8 @@ export default function VehicleDimensions() {
 
         return comparisons.every((comparison) => {
           if (pinnedCar) {
-            const carValue = getComparableValue(item[comparison.field] as number | number[])
-            const pinnedCarValue = getComparableValue(pinnedCar[comparison.field] as number | number[])
+            const carValue = getComparableValue(item[comparison.field] as number | number[], selectedVariants[item.name]?.[comparison.field as "power" | "torque" | "capacity"])
+            const pinnedCarValue = getComparableValue(pinnedCar[comparison.field] as number | number[], selectedVariants[pinnedCar.name]?.[comparison.field as "power" | "torque" | "capacity"])
 
             if (comparison.operator === ">") {
               return carValue > pinnedCarValue
@@ -509,8 +594,8 @@ export default function VehicleDimensions() {
         })
       })
       .sort((a, b) => {
-        const aVal = sortBy === "name" || sortBy === "manufacturer" ? 0 : getComparableValue(a[sortBy] as number | number[])
-        const bVal = sortBy === "name" || sortBy === "manufacturer" ? 0 : getComparableValue(b[sortBy] as number | number[])
+        const aVal = sortBy === "name" || sortBy === "manufacturer" ? 0 : getComparableValue(a[sortBy] as number | number[], selectedVariants[a.name]?.[sortBy as "power" | "torque" | "capacity"])
+        const bVal = sortBy === "name" || sortBy === "manufacturer" ? 0 : getComparableValue(b[sortBy] as number | number[], selectedVariants[b.name]?.[sortBy as "power" | "torque" | "capacity"])
         if (sortOrder === "asc") {
           return sortBy === "name" || sortBy === "manufacturer"
             ? a.name.localeCompare(b.name)
@@ -521,7 +606,7 @@ export default function VehicleDimensions() {
             : bVal - aVal
         }
       })
-  }, [data, dimensions, searchQuery, manufacturerFilter, comparisons, pinnedCar, starredCars, sortBy, sortOrder])
+  }, [data, dimensions, searchQuery, manufacturerFilter, comparisons, pinnedCar, starredCars, sortBy, sortOrder, selectedVariants])
 
   // 11. Use useCallback for event handlers to prevent recreation on every render
   const handleSliderChange = useCallback((value: number[], dimension: keyof typeof dimensions) => {
@@ -636,6 +721,7 @@ export default function VehicleDimensions() {
                 <option value="power">Sort by Power</option>
                 <option value="torque">Sort by Torque</option>
                 <option value="capacity">Sort by Capacity</option>
+                <option value="priceInr">Sort by Price (₹)</option>
               </select>
               <button
                 className="px-3 py-1 border rounded-md flex items-center gap-1"
@@ -678,6 +764,7 @@ export default function VehicleDimensions() {
                     <option value="power">Power</option>
                     <option value="torque">Torque</option>
                     <option value="capacity">Capacity</option>
+                    <option value="priceInr">Price (₹)</option>
                   </select>
                   <select
                     className="px-2 py-1 border rounded-md"
@@ -915,6 +1002,8 @@ export default function VehicleDimensions() {
               setPinnedCar={setPinnedCar}
               starredCars={starredCars}
               starcar={starcar}
+              selectedVariants={selectedVariants}
+              onSelectVariant={selectVariant}
             />
           ))}
         </div>
