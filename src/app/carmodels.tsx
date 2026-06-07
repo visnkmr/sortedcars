@@ -720,6 +720,26 @@ export const maruti = [
       sizeToWeightRatio: 6229342.90, // Recalculated: (6011316000 / 965)
       dragCoefficient: 0.33, // Estimate
     },
+    {
+      name: "Maruti Suzuki eVitara",
+      yearsProduced: "2025 - Present",
+      power: 140,
+      torque: 210,
+      gears: "Single-speed automatic",
+      length: 4345,
+      width: 1795,
+      height: 1645,
+      groundClearance: 200,
+      wheelbase: 2600,
+      turnRadius: 5.4,
+      price: 23340, // ~20 Lakh INR -> USD
+      capacity: 48000,
+      manufacturer: "Maruti Suzuki",
+      weight: 1700, // Kerb weight approx (EV battery adds weight)
+      estimatedCabinSpace: 6688115000, // Same platform as Grand Vitara
+      sizeToWeightRatio: 3934185.29, // 6688115000 / 1700
+      dragCoefficient: 0.34,
+    },
   ]
 export const hyundai = [
     {
@@ -1345,24 +1365,124 @@ export const fiat = [ // Note: Fiat has ceased new car sales in India. Data refl
   ]
 export const tata = [
     {
-        name: "Tata Curvv",
-        yearsProduced: "2024-2025 (Expected)", // Corrected: Not yet launched
-        power: [118, 123],
-        torque: [170, 225],
-        gears: "6-speed manual / 7-speed DCT / AMT", // Estimated Gears
-        length: 4308, // Corrected Length (Concept/Estimate)
-        width: 1810, // Corrected Width (Concept/Estimate)
-        height: 1630, // Corrected Height (Concept/Estimate)
-        groundClearance: 200, // Estimated
-        wheelbase: 2600, // Estimated (same as Nexon platform likely)
-        turnRadius: 5.4, // Estimated
-        price: 17505, // Kept estimated price (15 Lakh INR)
-        manufacturer: "Tata Motors",
-        weight: 1400, // Kept weight estimate
-        estimatedCabinSpace: 6564960000, // Recalculated: ((1630 - 200) * 2600 * 1810)
-        sizeToWeightRatio: 4689257.14, // Recalculated: (6564960000 / 1400)
-        dragCoefficient: 0.30, // Corrected Estimate (was 0.31)
-      },
+      name: "Tata Curvv",
+      yearsProduced: "2024-2025 (Expected)", // Corrected: Not yet launched
+      power: [118, 123],
+      torque: [170, 225],
+      gears: "6-speed manual / 7-speed DCT / AMT", // Estimated Gears
+      length: 4308, // Corrected Length (Concept/Estimate)
+      width: 1810, // Corrected Width (Concept/Estimate)
+      height: 1630, // Corrected Height (Concept/Estimate)
+      groundClearance: 200, // Estimated
+      wheelbase: 2600, // Estimated (same as Nexon platform likely)
+      turnRadius: 5.4, // Estimated
+      price: 17505, // Kept estimated price (15 Lakh INR)
+      manufacturer: "Tata Motors",
+      weight: 1400, // Kept weight estimate
+      estimatedCabinSpace: 6564960000, // Recalculated: ((1630 - 200) * 2600 * 1810)
+      sizeToWeightRatio: 4689257.14, // Recalculated: (6564960000 / 1400)
+      dragCoefficient: 0.30, // Corrected Estimate (was 0.31)
+    },
+    {
+      name: "Tata Nexon EV",
+      yearsProduced: "2020 - Present",
+      power: 127,
+      torque: 215,
+      gears: "Single-speed automatic",
+      length: 3995,
+      width: 1804,
+      height: 1620,
+      groundClearance: 205,
+      wheelbase: 2498,
+      turnRadius: 5.1,
+      price: 16338, // ~14 Lakh INR -> USD
+      capacity: [30240, 40200],
+      manufacturer: "Tata Motors",
+      weight: 1400, // Kerb weight approx
+      estimatedCabinSpace: 6387677184, // Same as Nexon ICE: (1620 - 205) * 2498 * 1804
+      sizeToWeightRatio: 4555287.93, // 6387677184 / 1400
+      dragCoefficient: 0.34,
+    },
+    {
+      name: "Tata Tiago EV",
+      yearsProduced: "2022 - Present",
+      power: 60,
+      torque: 110,
+      gears: "Single-speed automatic",
+      length: 3802,
+      width: 1677,
+      height: 1535,
+      groundClearance: 168,
+      wheelbase: 2400,
+      turnRadius: 4.9,
+      price: 9919, // ~8.5 Lakh INR -> USD
+      capacity: [19200, 24000],
+      manufacturer: "Tata Motors",
+      weight: 1015, // Kerb weight approx
+      estimatedCabinSpace: 5514350400, // (1535 - 168) * 2400 * 1677
+      sizeToWeightRatio: 5432857.54, // 5514350400 / 1015
+      dragCoefficient: 0.34,
+    },
+    {
+      name: "Tata Tigor EV",
+      yearsProduced: "2019 - Present",
+      power: 74,
+      torque: 170,
+      gears: "Single-speed automatic",
+      length: 3993,
+      width: 1677,
+      height: 1532,
+      groundClearance: 170,
+      wheelbase: 2450,
+      turnRadius: 5.1,
+      price: 14004, // ~12 Lakh INR -> USD
+      capacity: 26000,
+      manufacturer: "Tata Motors",
+      weight: 1145, // Kerb weight approx
+      estimatedCabinSpace: 5591874450, // (1532 - 170) * 2450 * 1677
+      sizeToWeightRatio: 4883733.14, // 5591874450 / 1145
+      dragCoefficient: 0.33,
+    },
+    {
+      name: "Tata Punch EV",
+      yearsProduced: "2024 - Present",
+      power: 80,
+      torque: 114,
+      gears: "Single-speed automatic",
+      length: 3827,
+      width: 1742,
+      height: 1615,
+      groundClearance: 190,
+      wheelbase: 2445,
+      turnRadius: 4.9,
+      price: 12837, // ~11 Lakh INR -> USD
+      capacity: [25000, 35000],
+      manufacturer: "Tata Motors",
+      weight: 1200, // Kerb weight approx
+      estimatedCabinSpace: 6060197490, // (1615 - 190) * 2445 * 1742
+      sizeToWeightRatio: 5050164.58, // 6060197490 / 1200
+      dragCoefficient: 0.34,
+    },
+    {
+      name: "Tata Curvv EV",
+      yearsProduced: "2024 - Present",
+      power: [148, 168],
+      torque: [215, 260],
+      gears: "Single-speed automatic",
+      length: 4308,
+      width: 1810,
+      height: 1630,
+      groundClearance: 190,
+      wheelbase: 2600,
+      turnRadius: 5.4,
+      price: 21006, // ~18 Lakh INR -> USD
+      capacity: [40000, 55000],
+      manufacturer: "Tata Motors",
+      weight: 1600, // Kerb weight approx
+      estimatedCabinSpace: 6823440000, // (1630 - 190) * 2600 * 1810
+      sizeToWeightRatio: 4264650.00, // 6823440000 / 1600
+      dragCoefficient: 0.30,
+    },
     {
       name: "Tata Nano",
       yearsProduced: "2008 - 2018",
